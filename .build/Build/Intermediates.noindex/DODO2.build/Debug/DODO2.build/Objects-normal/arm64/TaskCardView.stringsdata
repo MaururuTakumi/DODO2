@@ -1,0 +1,48 @@
+{
+  "source": "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/TaskCardView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Task %@",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 42
+        }
+      },
+      {
+        "comment": "",
+        "key": "Double tap to toggle done, drag to a label to assign",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "checked",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "unchecked",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 64
+        }
+      }
+    ]
+  },
+  "version": 1
+}

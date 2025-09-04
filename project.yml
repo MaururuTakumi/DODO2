@@ -1,0 +1,23 @@
+name: DODO2
+options:
+  deploymentTarget:
+    macOS: "14.0"
+targets:
+  DODO2:
+    type: application
+    platform: macOS
+    bundleId: com.honkoma.DODO2
+    sources:
+      - path: Sources/DODO2
+    entitlements:
+      path: Sources/DODO2/DODO2.entitlements
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+  DODO2Tests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/DODO2Tests
+    dependencies:
+      - target: DODO2
