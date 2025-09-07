@@ -7,6 +7,9 @@ struct HeaderBar: View {
     @Binding var selectedLabels: Set<String> // stores label ids
     let onCommitQuickAdd: (String) -> Void
     let onAssignLabelToTaskId: (_ taskId: UUID, _ labelId: String) -> Void
+    let onRequestClearCompleted: () -> Void
+    let onRequestDeleteSelected: () -> Void
+    let hasSelectedTask: Bool
     let counts: [String: Int]
     let suggestNameForTask: (UUID) -> String?
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
@@ -81,6 +84,17 @@ struct HeaderBar: View {
             }, onCancel: { showLabelPopover = false }) }
 
             Spacer(minLength: 0)
+
+            Button(action: { onRequestDeleteSelected() }) {
+                Image(systemName: "trash")
+            }
+            .help("Delete selected task")
+            .disabled(!hasSelectedTask)
+
+            Button(action: { onRequestClearCompleted() }) {
+                SwiftUI.Label("Clear Completed…", systemImage: "trash.slash")
+            }
+            .help("Delete completed tasks in current scope")
 
             SearchField(text: $searchText)
                 .frame(width: 220)
@@ -379,10 +393,16 @@ private struct LabelEditorPopover: View {
     let mode: Mode
     let onSubmit: () -> Void
     let onCancel: () -> Void
+
+    @FocusState private var nameFocused: Bool
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(mode == .create ? "Create Label" : "Edit Label").font(.headline)
-            TextField("Name", text: $name)
+            TextField("Label name", text: $name)
+                .focused($nameFocused)
+                .submitLabel(.done)
+                .onSubmit { onSubmit() }
                 .onChange(of: name) { newValue in
                     if newValue.count > 24 { name = String(newValue.prefix(24)) }
                 }
@@ -394,10 +414,13 @@ private struct LabelEditorPopover: View {
             }
             HStack {
                 Spacer()
-                Button("Cancel", action: onCancel)
-                Button(mode == .create ? "Create" : "Save", action: onSubmit).keyboardShortcut(.return)
+                Button("Cancel", role: .cancel, action: onCancel)
+                    .keyboardShortcut(.cancelAction)
+                Button(mode == .create ? "Create" : "Save", action: onSubmit)
+                    .keyboardShortcut(.defaultAction)
             }
         }
+        .onAppear { nameFocused = true }
         .padding(16)
         .frame(width: 280)
     }

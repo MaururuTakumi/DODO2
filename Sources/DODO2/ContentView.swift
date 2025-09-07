@@ -7,7 +7,9 @@ struct ContentView: View {
     }
 }
 
+// Disable previews when PreviewsMacros are unavailable (e.g., xcodebuild CI)
+#if canImport(PreviewsMacros)
 #Preview {
     ContentView()
 }
-
+#endif
