@@ -81,6 +81,7 @@ struct MatrixOverlayView: View {
                         quadrantView(q, title: q.title, minHeight: cellH, weight: q == .doFirst ? 1.08 : 1.0)
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.bottom, 28)
                 } else {
                     LazyVGrid(
                         columns: [GridItem(.flexible(), spacing: spacing), GridItem(.flexible(), spacing: spacing)],
@@ -91,10 +92,10 @@ struct MatrixOverlayView: View {
                         quadrantView(.delegate,  title: "Delegate",   minHeight: cellH)
                         quadrantView(.eliminate, title: "Eliminate",  minHeight: cellH)
                     }
-                    .frame(minHeight: cellH * 2 + spacing)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, 28)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 
