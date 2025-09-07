@@ -262,7 +262,7 @@ struct BottomSheetRoot: View {
     }
 
     private func countsByLabel() -> [String: Int] {
-　        var dict: [String: Int] = [:]
+        var dict: [String: Int] = [:]
         for t in tasks { dict[t.labelId, default: 0] += 1 }
         return dict
     }
