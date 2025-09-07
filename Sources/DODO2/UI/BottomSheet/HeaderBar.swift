@@ -14,6 +14,8 @@ struct HeaderBar: View {
     let suggestNameForTask: (UUID) -> String?
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
     var onTapOpenMatrix: () -> Void = {}
+    @AppStorage("didSeeMatrixCoachmark") private var didSeeMatrixCoachmark: Bool = false
+    @State private var showCoachmark: Bool = false
 
     @FocusState private var quickAddFocused: Bool
     @State private var showLabelPopover = false
@@ -97,15 +99,34 @@ struct HeaderBar: View {
             }
             .help("Delete completed tasks in current scope")
 
-            Button(action: { onTapOpenMatrix() }) {
+            Button(action: { onTapOpenMatrix(); didSeeMatrixCoachmark = true; showCoachmark = false }) {
                 SwiftUI.Label("Matrix", systemImage: "square.grid.2x2")
             }
             .help("Open priority matrix")
+            .controlSize(.small)
+            .keyboardShortcut("m", modifiers: [.command])
+            .popover(isPresented: $showCoachmark, arrowEdge: .top) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Priority Matrix")
+                        .font(.headline)
+                    Text("View tasks by Urgent × Important. You can also drag between quadrants.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(12)
+                .frame(width: 260)
+            }
 
             SearchField(text: $searchText)
                 .frame(width: 220)
                 .accessibilityLabel(Text("Search"))
                 .accessibilityHint(Text("Type to filter tasks by title"))
+        }
+        .onAppear {
+            if !didSeeMatrixCoachmark {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { showCoachmark = true }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { showCoachmark = false; didSeeMatrixCoachmark = true }
+            }
         }
         .padding(.horizontal, BrandTokens.gutter)
         .frame(height: BrandTokens.headerHeight)

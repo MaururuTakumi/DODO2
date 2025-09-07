@@ -16,6 +16,7 @@ struct BottomSheetRoot: View {
     @State private var clearTargetCount: Int = 0
     @State private var clearScopeTitle: String = "all labels"
     @State private var isMatrixPresented: Bool = false
+    @State private var toast: HUDToastState? = nil
 
     private let onRequestClose: () -> Void
 
@@ -101,6 +102,7 @@ struct BottomSheetRoot: View {
         }
         .sheet(isPresented: $isMatrixPresented) {
             MatrixOverlayView(items: $tasks)
+                .hudToast($toast)
                 .frame(minWidth: 900, minHeight: 560)
         }
         .onChange(of: tasks) { _ in saveStore() }
@@ -119,6 +121,16 @@ struct BottomSheetRoot: View {
             guard let dir = note.userInfo?["dir"] as? Int else { return }
             moveSelection(by: dir)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleImportantSelected)) { _ in
+            if let sel = selectedTaskId, let t = tasks.first(where: {$0.id == sel}) { toggleImportant(t) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleUrgentSelected)) { _ in
+            if let sel = selectedTaskId, let t = tasks.first(where: {$0.id == sel}) { toggleUrgent(t) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleMatrixOverlay)) { _ in
+            isMatrixPresented.toggle()
+        }
+        .hudToast($toast)
         .onReceive(NotificationCenter.default.publisher(for: .deleteSelection)) { _ in
             if let sel = selectedTaskId { deleteTask(id: sel) }
         }
@@ -186,6 +198,7 @@ struct BottomSheetRoot: View {
         if let idx = tasks.firstIndex(of: task) {
             let newVal = tasks[idx].importance >= 2 ? 1 : 3
             tasks[idx] = tasks[idx].updating(importance: newVal)
+            showTransientFeedback(for: tasks[idx])
         }
     }
 
@@ -193,7 +206,20 @@ struct BottomSheetRoot: View {
         if let idx = tasks.firstIndex(of: task) {
             let newVal = tasks[idx].urgency >= 2 ? 1 : 3
             tasks[idx] = tasks[idx].updating(urgency: newVal)
+            showTransientFeedback(for: tasks[idx])
         }
+    }
+
+    private func showTransientFeedback(for task: Task) {
+        let q = task.quadrant
+        let msg: String
+        switch q {
+        case .doFirst: msg = "Moved to Do First"
+        case .schedule: msg = "Moved to Schedule"
+        case .delegate: msg = "Moved to Delegate"
+        case .eliminate: msg = "Moved to Eliminate"
+        }
+        withAnimation { toast = HUDToastState(message: msg) }
     }
 
     private func filteredTasks() -> [Task] {

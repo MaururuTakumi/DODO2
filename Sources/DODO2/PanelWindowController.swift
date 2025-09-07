@@ -214,6 +214,25 @@ final class PanelWindowController: NSWindowController {
         guard keyMonitor == nil else { return }
         keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             guard let self = self else { return event }
+            // Global shortcuts: ⌘M toggles matrix overlay when panel is visible
+            if event.modifierFlags.contains(.command), event.charactersIgnoringModifiers?.lowercased() == "m" {
+                NotificationCenter.default.post(name: .toggleMatrixOverlay, object: nil)
+                return nil
+            }
+            // Don't handle character toggles if editing text
+            if let panel = self.window, panel.firstResponder is NSText || panel.firstResponder is NSTextView {
+                return event
+            }
+            if event.modifierFlags.isDisjoint(with: [.command, .option, .control, .shift]) {
+                if event.charactersIgnoringModifiers?.lowercased() == "i" {
+                    NotificationCenter.default.post(name: .toggleImportantSelected, object: nil)
+                    return nil
+                }
+                if event.charactersIgnoringModifiers?.lowercased() == "u" {
+                    NotificationCenter.default.post(name: .toggleUrgentSelected, object: nil)
+                    return nil
+                }
+            }
             if event.modifierFlags.contains(.command) && event.keyCode == 51 { // Command + Delete
                 NotificationCenter.default.post(name: .deleteSelection, object: nil)
                 return nil

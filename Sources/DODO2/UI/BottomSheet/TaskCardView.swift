@@ -20,13 +20,14 @@ struct TaskCardView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 Spacer(minLength: 0)
-                // Priority pills
+                // Priority pills (larger, no-wrap) + mini badge
                 if let onToggleImportant {
-                    PillButton(active: task.importance >= 2, label: "Important", systemImage: "star.fill") { onToggleImportant(task) }
+                    PillToggle(icon: "star.fill", label: "Important", active: task.importance >= 2) { onToggleImportant(task) }
                 }
                 if let onToggleUrgent {
-                    PillButton(active: task.urgency >= 2, label: "Urgent", systemImage: "bolt.fill") { onToggleUrgent(task) }
+                    PillToggle(icon: "bolt.fill", label: "Urgent", active: task.urgency >= 2) { onToggleUrgent(task) }
                 }
+                MatrixMiniBadge(quadrant: task.quadrant)
                 ToggleDoneArea(done: task.done) { toggleDone(task) }
             }
 
@@ -90,24 +91,69 @@ private struct ToggleDoneArea: View {
     }
 }
 
-// Reusable pill button
-private struct PillButton: View {
-    var active: Bool
-    var label: String
-    var systemImage: String
-    var action: () -> Void
+// Compact pill toggle
+private struct PillToggle: View {
+    let icon: String
+    let label: String
+    let active: Bool
+    let action: () -> Void
     var body: some View {
         Button(action: action) {
-            SwiftUI.Label(label, systemImage: systemImage)
-                .labelStyle(.titleAndIcon)
-                .font(.caption)
-                .padding(.horizontal, 8).padding(.vertical, 5)
-                .contentShape(Capsule())
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                Text(label).lineLimit(1).fixedSize()
+            }
+            .font(.caption)
+            .padding(.horizontal, 10).padding(.vertical, 7)
+            .contentShape(Capsule())
         }
         .buttonStyle(.plain)
-        .background((active ? Color.accentColor.opacity(0.20) : Color.gray.opacity(0.15)))
+        .background((active ? Color.accentColor.opacity(0.18) : Color.gray.opacity(0.12)))
         .overlay(Capsule().stroke(active ? Color.accentColor : Color.gray.opacity(0.35), lineWidth: 1))
         .clipShape(Capsule())
         .help(label)
+        .accessibilityLabel(Text(label))
+        .accessibilityHint(Text("Toggle \(label)"))
+    }
+}
+
+// Mini quadrant badge
+private struct MatrixMiniBadge: View {
+    let quadrant: Quadrant
+    @State private var glow: Bool = false
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 6)
+                .fill(Color.gray.opacity(0.14))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.accentColor.opacity(glow ? 0.8 : 0.0), lineWidth: glow ? 2 : 0)
+                        .animation(.easeInOut(duration: 0.8), value: glow)
+                )
+            GridMarker(active: quadrant)
+        }
+        .frame(width: 28, height: 20)
+        .onChange(of: quadrant) { _ in
+            glow = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { glow = false }
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+private struct GridMarker: View {
+    let active: Quadrant
+    private func cellColor(_ q: Quadrant) -> Color { q == active ? .accentColor : .secondary.opacity(0.35) }
+    var body: some View {
+        HStack(spacing: 3) {
+            VStack(spacing: 3) {
+                Circle().fill(cellColor(.doFirst)).frame(width: 4, height: 4)
+                Circle().fill(cellColor(.delegate)).frame(width: 4, height: 4)
+            }
+            VStack(spacing: 3) {
+                Circle().fill(cellColor(.schedule)).frame(width: 4, height: 4)
+                Circle().fill(cellColor(.eliminate)).frame(width: 4, height: 4)
+            }
+        }
     }
 }

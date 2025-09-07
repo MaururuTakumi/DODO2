@@ -74,4 +74,7 @@ extension Notification.Name {
     static let requestDeleteSelected = Notification.Name("requestDeleteSelected")
     static let requestDeleteCompleted = Notification.Name("requestDeleteCompleted")
     static let requestUndoDelete = Notification.Name("requestUndoDelete")
+    static let toggleImportantSelected = Notification.Name("toggleImportantSelected")
+    static let toggleUrgentSelected = Notification.Name("toggleUrgentSelected")
+    static let toggleMatrixOverlay = Notification.Name("toggleMatrixOverlay")
 }

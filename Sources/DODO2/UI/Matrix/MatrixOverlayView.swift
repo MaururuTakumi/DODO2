@@ -5,6 +5,8 @@ struct MatrixOverlayView: View {
     @Binding var items: [Task]
     @Environment(\.dismiss) private var dismiss
     @State private var filter: MatrixFilter = .all
+    @State private var targeted: Quadrant? = nil
+    @State private var toast: HUDToastState? = nil
 
     var body: some View {
         VStack(spacing: 12) {
@@ -12,16 +14,17 @@ struct MatrixOverlayView: View {
             content
         }
         .padding()
+        .hudToast($toast)
     }
 
     private var header: some View {
         HStack(spacing: 12) {
             Text("Urgency × Importance").font(.title2).bold()
             Spacer()
-            countChip("Do First", counts[.doFirst] ?? 0)
-            countChip("Schedule", counts[.schedule] ?? 0)
-            countChip("Delegate", counts[.delegate] ?? 0)
-            countChip("Eliminate", counts[.eliminate] ?? 0)
+            countChip("Do First", .doFirst)
+            countChip("Schedule", .schedule)
+            countChip("Delegate", .delegate)
+            countChip("Eliminate", .eliminate)
             Picker("Filter", selection: $filter) {
                 ForEach(MatrixFilter.allCases) { Text($0.title).tag($0) }
             }
@@ -31,12 +34,16 @@ struct MatrixOverlayView: View {
         }
     }
 
-    private func countChip(_ title: String, _ n: Int) -> some View {
-        Text("\(title): \(n)")
-            .font(.caption)
-            .padding(.horizontal, 8).padding(.vertical, 4)
-            .background(Color.gray.opacity(0.12))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+    private func countChip(_ title: String, _ q: Quadrant) -> some View {
+        let n = counts[q] ?? 0
+        return Button(action: { filter = filter.quadrant == q ? .all : MatrixFilter(from: q) }) {
+            Text("\(title): \(n)")
+                .font(.caption)
+                .padding(.horizontal, 8).padding(.vertical, 4)
+                .background((filter.quadrant == q ? Color.accentColor.opacity(0.18) : Color.gray.opacity(0.12)))
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+        }
+        .buttonStyle(.plain)
     }
 
     @ViewBuilder
@@ -60,7 +67,13 @@ struct MatrixOverlayView: View {
             Text(title).font(.headline)
             ScrollView {
                 VStack(spacing: 8) {
-                    ForEach(items.filter { $0.quadrant == q }.sorted { $0.updatedAt > $1.updatedAt }) { item in
+                    let data = items.filter { $0.quadrant == q }.sorted { $0.updatedAt > $1.updatedAt }
+                    if data.isEmpty {
+                        EmptyQuadrantHint(title: title)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.vertical, 12)
+                    }
+                    ForEach(data) { item in
                         VStack(alignment: .leading, spacing: 4) {
                             Text(item.title).font(.subheadline).bold()
                             Text("I:\(item.importance)  U:\(item.urgency)")
@@ -78,7 +91,16 @@ struct MatrixOverlayView: View {
         .padding()
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .onDrop(of: [UTType.text], isTargeted: nil) { providers in
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.accentColor.opacity(targeted == q ? 0.8 : 0.0), style: StrokeStyle(lineWidth: 2, dash: targeted == q ? [] : []))
+                .animation(.easeInOut(duration: 0.2), value: targeted == q)
+        )
+        .overlay(alignment: .topTrailing) {
+            if targeted == q { Text("Drop to \(title)").font(.caption).padding(6).background(.thinMaterial, in: Capsule())
+                    .transition(.opacity) }
+        }
+        .onDrop(of: [UTType.text], isTargeted: Binding(get: { targeted == q }, set: { v in targeted = v ? q : nil })) { providers in
             handleDrop(into: q, providers: providers)
         }
     }
@@ -106,6 +128,7 @@ struct MatrixOverlayView: View {
 
             DispatchQueue.main.async {
                 items[idx] = items[idx].updating(urgency: u, importance: i)
+                showToast(for: items[idx])
             }
         }
         return true
@@ -113,6 +136,16 @@ struct MatrixOverlayView: View {
 
     private var counts: [Quadrant: Int] {
         Dictionary(grouping: items, by: \.quadrant).mapValues(\.count)
+    }
+    private func showToast(for task: Task) {
+        let msg: String
+        switch task.quadrant {
+        case .doFirst: msg = "Moved to Do First"
+        case .schedule: msg = "Moved to Schedule"
+        case .delegate: msg = "Moved to Delegate"
+        case .eliminate: msg = "Moved to Eliminate"
+        }
+        withAnimation { toast = HUDToastState(message: msg) }
     }
 }
 
@@ -139,6 +172,24 @@ private enum MatrixFilter: String, CaseIterable, Identifiable {
     }
 }
 
+private struct EmptyQuadrantHint: View {
+    var title: String
+    var body: some View {
+        VStack(spacing: 6) {
+            Image(systemName: "tray.and.arrow.down.fill").foregroundStyle(.secondary)
+            Text("Drop tasks here or toggle on cards").font(.caption).foregroundStyle(.secondary)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(style: StrokeStyle(lineWidth: 1, dash: [5,3]))
+                .foregroundColor(.secondary.opacity(0.4))
+        )
+        .accessibilityHint(Text("Empty quadrant: \(title)"))
+    }
+}
+
 private extension Quadrant {
     var title: String {
         switch self {
@@ -150,3 +201,13 @@ private extension Quadrant {
     }
 }
 
+private extension MatrixFilter {
+    init(from q: Quadrant) {
+        switch q {
+        case .doFirst: self = .doFirst
+        case .schedule: self = .schedule
+        case .delegate: self = .delegate
+        case .eliminate: self = .eliminate
+        }
+    }
+}
