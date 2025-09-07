@@ -1,0 +1,18 @@
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/HotKeyManager.swift":
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HotKeyManager.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HotKeyManager.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HotKeyManager.d"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HotKeyManager.swiftdeps"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HotKeyManager.dia"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift":
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HeaderBar.d"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HeaderBar.swiftdeps"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HeaderBar.dia"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HeaderBar.o"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/HeaderBar.swiftconstvalues"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/KeyPanel.swift":
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/KeyPanel.d"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/KeyPanel.swiftdeps"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/KeyPanel.dia"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/KeyPanel.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/KeyPanel.o"

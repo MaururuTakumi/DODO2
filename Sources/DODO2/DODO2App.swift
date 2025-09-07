@@ -48,6 +48,8 @@ struct DODO2App: App {
                     NotificationCenter.default.post(name: .requestDeleteCompleted, object: nil)
                 }
                 .keyboardShortcut(.delete, modifiers: [.command, .shift])
+
+                // Matrix opens as sheet from main UI; no separate window command
             }
             CommandGroup(replacing: .appSettings) {
                 Button("Preferences…") {
@@ -72,4 +74,7 @@ extension Notification.Name {
     static let requestDeleteSelected = Notification.Name("requestDeleteSelected")
     static let requestDeleteCompleted = Notification.Name("requestDeleteCompleted")
     static let requestUndoDelete = Notification.Name("requestUndoDelete")
+    static let toggleImportantSelected = Notification.Name("toggleImportantSelected")
+    static let toggleUrgentSelected = Notification.Name("toggleUrgentSelected")
+    static let toggleMatrixOverlay = Notification.Name("toggleMatrixOverlay")
 }

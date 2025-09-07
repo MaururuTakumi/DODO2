@@ -1,0 +1,18 @@
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift":
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.dia"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.d"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.o"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftconstvalues"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftdeps"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/AppDelegate.swift":
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftdeps"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftconstvalues"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.dia"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.d"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift":
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftdeps"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.d"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.dia"

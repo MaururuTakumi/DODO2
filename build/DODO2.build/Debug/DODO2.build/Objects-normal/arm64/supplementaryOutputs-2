@@ -1,0 +1,18 @@
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift":
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.dia"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.d"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftdeps"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/AppDelegate.swift":
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.d"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftdeps"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.dia"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift":
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftconstvalues"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.d"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.o"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.dia"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftdeps"

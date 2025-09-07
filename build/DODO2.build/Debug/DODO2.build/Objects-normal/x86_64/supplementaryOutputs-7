@@ -1,0 +1,18 @@
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/PanelWindowController.swift":
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/PanelWindowController.o"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/PanelWindowController.dia"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/PanelWindowController.swiftdeps"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/PanelWindowController.swiftconstvalues"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/PanelWindowController.d"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Label.swift":
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Label.swiftdeps"
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Label.dia"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Label.o"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Label.d"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Label.swiftconstvalues"
+"/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/Persistence.swift":
+  diagnostics: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Persistence.dia"
+  dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Persistence.d"
+  const-values: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Persistence.swiftconstvalues"
+  object: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Persistence.o"
+  swift-dependencies: "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/x86_64/Persistence.swiftdeps"

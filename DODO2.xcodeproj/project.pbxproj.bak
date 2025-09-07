@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		163C012A2C413C6AECD2E095 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18404397AC516A91B66B0670 /* HotKeyManager.swift */; };
+		256FBD85D3A63B5C4A034032 /* KeyPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E41C9BE1B6069FEF6F6037 /* KeyPanel.swift */; };
+		332D98704F5DF313E5AAEE6B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCEAAD3EF650BCE67E1202 /* Persistence.swift */; };
+		41F712CB82731A836647505E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C82A70101BE9BA3387D4213 /* AppDelegate.swift */; };
+		4BD83623D10F14E384D3F46D /* DODO2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364C6EFCDEC240A196EB977 /* DODO2App.swift */; };
+		4BF65C770D0469E0E3D1F6DA /* HeaderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A1D5BE2B6FF982BAEE278D /* HeaderBar.swift */; };
+		538E989FB9B940FDAFC34C6F /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FCA3B5686ED53A5E2AE5BA /* PreferencesView.swift */; };
+		5C37B70A09C048121BB436C5 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075743C438C17559491A196 /* Label.swift */; };
+		5C62C3F022A7CD14DE4BE36E /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B087EEE4323369DB771C75 /* SettingsModel.swift */; };
+		63C258D46C87B2B35DBD9F42 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0C2A172EE6D8271997E05 /* SettingsTests.swift */; };
+		75596F75403A48C8ACC023ED /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58DECE491FD935B90BB80CA /* Task.swift */; };
+		8BE6E66ABDC39C0BE50C3069 /* BrandTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0451E57F5064F8BD197596 /* BrandTokens.swift */; };
+		8D82EDD8669AEDE7787554C6 /* DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C063ADAC083DA1C6D17980 /* DragDrop.swift */; };
+		9F7C491CBC10E79245934CCA /* BottomSheetRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E56FF4B997795703C188F1 /* BottomSheetRoot.swift */; };
+		B01424105B9C964DDA878C20 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B06B4010FE02EFE832E611A /* PersistenceTests.swift */; };
+		B0A35DDF293AFACE4D747CD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00C1B253799D7CE5930E0D2 /* ContentView.swift */; };
+		C27E584918CABB50BFB8364E /* DODO2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B5EEA65DDAA509E2B5C6 /* DODO2Tests.swift */; };
+		C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92543E80125B5A9863D48C /* ShortcutCaptureView.swift */; };
+		DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AA66EEFF7940FDF00D0D2 /* TaskCardView.swift */; };
+		E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E23871D3F5976BEA343A7334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01574B965E3054F4DB59AD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A783CE9EE45738015854E2E0;
+			remoteInfo = DODO2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14A1D5BE2B6FF982BAEE278D /* HeaderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBar.swift; sourceTree = "<group>"; };
+		18404397AC516A91B66B0670 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		19B087EEE4323369DB771C75 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		34E56FF4B997795703C188F1 /* BottomSheetRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetRoot.swift; sourceTree = "<group>"; };
+		68FCA3B5686ED53A5E2AE5BA /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		6E4AA66EEFF7940FDF00D0D2 /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		70FCEAAD3EF650BCE67E1202 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		7364C6EFCDEC240A196EB977 /* DODO2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DODO2App.swift; sourceTree = "<group>"; };
+		7820B5EEA65DDAA509E2B5C6 /* DODO2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DODO2Tests.swift; sourceTree = "<group>"; };
+		7C82A70101BE9BA3387D4213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F0451E57F5064F8BD197596 /* BrandTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTokens.swift; sourceTree = "<group>"; };
+		9A7B4093F1329DAD17B0143F /* DODO2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DODO2.entitlements; sourceTree = "<group>"; };
+		9B06B4010FE02EFE832E611A /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
+		AAC0C2A172EE6D8271997E05 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		AD92543E80125B5A9863D48C /* ShortcutCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutCaptureView.swift; sourceTree = "<group>"; };
+		B0E48B51562E8DDF69858523 /* DODO2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DODO2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C075743C438C17559491A196 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		D6E41C9BE1B6069FEF6F6037 /* KeyPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPanel.swift; sourceTree = "<group>"; };
+		DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelWindowController.swift; sourceTree = "<group>"; };
+		E00C1B253799D7CE5930E0D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E0C063ADAC083DA1C6D17980 /* DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDrop.swift; sourceTree = "<group>"; };
+		EB37D11A045FFA90BC8EF96C /* DODO2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DODO2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58DECE491FD935B90BB80CA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0091A7CDAEF007E7F7319E51 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				68FCA3B5686ED53A5E2AE5BA /* PreferencesView.swift */,
+				AD92543E80125B5A9863D48C /* ShortcutCaptureView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2C9501F66EBBA91E5B75ECDD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8EE0A7A1A69F3A7C2AC8C4BA /* BottomSheet */,
+				92619CBF6634EB288846C1E5 /* Theme */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5562E8EC3635A80E27B97AA5 /* DODO2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7820B5EEA65DDAA509E2B5C6 /* DODO2Tests.swift */,
+				9B06B4010FE02EFE832E611A /* PersistenceTests.swift */,
+				AAC0C2A172EE6D8271997E05 /* SettingsTests.swift */,
+			);
+			name = DODO2Tests;
+			path = Tests/DODO2Tests;
+			sourceTree = "<group>";
+		};
+		5870C40D77C2EEF51D0ADC00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0E48B51562E8DDF69858523 /* DODO2.app */,
+				EB37D11A045FFA90BC8EF96C /* DODO2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		684F1DC8689256E57CFA6E84 /* DODO2 */ = {
+			isa = PBXGroup;
+			children = (
+				7C82A70101BE9BA3387D4213 /* AppDelegate.swift */,
+				E00C1B253799D7CE5930E0D2 /* ContentView.swift */,
+				9A7B4093F1329DAD17B0143F /* DODO2.entitlements */,
+				7364C6EFCDEC240A196EB977 /* DODO2App.swift */,
+				18404397AC516A91B66B0670 /* HotKeyManager.swift */,
+				DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */,
+				A1DA90DAB72D14EF84B07994 /* Models */,
+				6C4450C345AA7D303B413F09 /* Services */,
+				0091A7CDAEF007E7F7319E51 /* Settings */,
+				2C9501F66EBBA91E5B75ECDD /* UI */,
+			);
+			name = DODO2;
+			path = Sources/DODO2;
+			sourceTree = "<group>";
+		};
+		6C4450C345AA7D303B413F09 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E0C063ADAC083DA1C6D17980 /* DragDrop.swift */,
+				70FCEAAD3EF650BCE67E1202 /* Persistence.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8EE0A7A1A69F3A7C2AC8C4BA /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				34E56FF4B997795703C188F1 /* BottomSheetRoot.swift */,
+				14A1D5BE2B6FF982BAEE278D /* HeaderBar.swift */,
+				D6E41C9BE1B6069FEF6F6037 /* KeyPanel.swift */,
+				6E4AA66EEFF7940FDF00D0D2 /* TaskCardView.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		92619CBF6634EB288846C1E5 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7F0451E57F5064F8BD197596 /* BrandTokens.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		930C9F602D456EA5FE731FD9 = {
+			isa = PBXGroup;
+			children = (
+				684F1DC8689256E57CFA6E84 /* DODO2 */,
+				5562E8EC3635A80E27B97AA5 /* DODO2Tests */,
+				5870C40D77C2EEF51D0ADC00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1DA90DAB72D14EF84B07994 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C075743C438C17559491A196 /* Label.swift */,
+				19B087EEE4323369DB771C75 /* SettingsModel.swift */,
+				F58DECE491FD935B90BB80CA /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A501A62875D63A34ED53D4E /* DODO2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9119299C7DC8B9C8A27BA4C0 /* Build configuration list for PBXNativeTarget "DODO2Tests" */;
+			buildPhases = (
+				3C95C680884C25DF9703DF88 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				901341DC762F682963DB68FC /* PBXTargetDependency */,
+			);
+			name = DODO2Tests;
+			packageProductDependencies = (
+			);
+			productName = DODO2Tests;
+			productReference = EB37D11A045FFA90BC8EF96C /* DODO2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A783CE9EE45738015854E2E0 /* DODO2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7C180995D2B84573E38BF4F /* Build configuration list for PBXNativeTarget "DODO2" */;
+			buildPhases = (
+				299B409382887162AAA1EC92 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DODO2;
+			packageProductDependencies = (
+			);
+			productName = DODO2;
+			productReference = B0E48B51562E8DDF69858523 /* DODO2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E01574B965E3054F4DB59AD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = BC92CBFE2541C4FFB3E10190 /* Build configuration list for PBXProject "DODO2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 930C9F602D456EA5FE731FD9;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A783CE9EE45738015854E2E0 /* DODO2 */,
+				7A501A62875D63A34ED53D4E /* DODO2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		299B409382887162AAA1EC92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F712CB82731A836647505E /* AppDelegate.swift in Sources */,
+				9F7C491CBC10E79245934CCA /* BottomSheetRoot.swift in Sources */,
+				8BE6E66ABDC39C0BE50C3069 /* BrandTokens.swift in Sources */,
+				B0A35DDF293AFACE4D747CD6 /* ContentView.swift in Sources */,
+				4BD83623D10F14E384D3F46D /* DODO2App.swift in Sources */,
+				8D82EDD8669AEDE7787554C6 /* DragDrop.swift in Sources */,
+				4BF65C770D0469E0E3D1F6DA /* HeaderBar.swift in Sources */,
+				163C012A2C413C6AECD2E095 /* HotKeyManager.swift in Sources */,
+				256FBD85D3A63B5C4A034032 /* KeyPanel.swift in Sources */,
+				5C37B70A09C048121BB436C5 /* Label.swift in Sources */,
+				E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */,
+				332D98704F5DF313E5AAEE6B /* Persistence.swift in Sources */,
+				538E989FB9B940FDAFC34C6F /* PreferencesView.swift in Sources */,
+				5C62C3F022A7CD14DE4BE36E /* SettingsModel.swift in Sources */,
+				C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */,
+				75596F75403A48C8ACC023ED /* Task.swift in Sources */,
+				DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C95C680884C25DF9703DF88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C27E584918CABB50BFB8364E /* DODO2Tests.swift in Sources */,
+				B01424105B9C964DDA878C20 /* PersistenceTests.swift in Sources */,
+				63C258D46C87B2B35DBD9F42 /* SettingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		901341DC762F682963DB68FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A783CE9EE45738015854E2E0 /* DODO2 */;
+			targetProxy = E23871D3F5976BEA343A7334 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F7965A983EF4271177BE283 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DODO2.app/Contents/MacOS/DODO2";
+			};
+			name = Debug;
+		};
+		34B1772E9C05463215F92B1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DODO2.app/Contents/MacOS/DODO2";
+			};
+			name = Release;
+		};
+		83F688E13AF4AC5B96914C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/DODO2/DODO2.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9DD5DFD37FE5DF91D8A95E78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B3A4454F7EA7075BF98371A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/DODO2/DODO2.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C672B13BB130D08937848375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9119299C7DC8B9C8A27BA4C0 /* Build configuration list for PBXNativeTarget "DODO2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F7965A983EF4271177BE283 /* Debug */,
+				34B1772E9C05463215F92B1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC92CBFE2541C4FFB3E10190 /* Build configuration list for PBXProject "DODO2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C672B13BB130D08937848375 /* Debug */,
+				9DD5DFD37FE5DF91D8A95E78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E7C180995D2B84573E38BF4F /* Build configuration list for PBXNativeTarget "DODO2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3A4454F7EA7075BF98371A6 /* Debug */,
+				83F688E13AF4AC5B96914C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E01574B965E3054F4DB59AD2 /* Project object */;
+}

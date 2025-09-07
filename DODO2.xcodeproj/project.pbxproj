@@ -27,6 +27,14 @@
 		C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92543E80125B5A9863D48C /* ShortcutCaptureView.swift */; };
 		DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AA66EEFF7940FDF00D0D2 /* TaskCardView.swift */; };
 		E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */; };
+        AA1000010000000000000001 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001001 /* TaskItem.swift */; };
+        AA1000010000000000000002 /* TaskPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001002 /* TaskPersistence.swift */; };
+        AA1000010000000000000003 /* PriorityMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001003 /* PriorityMatrixView.swift */; };
+        AA1000010000000000000004 /* MatrixOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001004 /* MatrixOverlayView.swift */; };
+        AA1000010000000000000005 /* HUDToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001005 /* HUDToast.swift */; };
+        AA1000010000000000000006 /* UIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001006 /* UIConst.swift */; };
+        AA1000010000000000000007 /* NewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001007 /* NewTaskButton.swift */; };
+        AA1000010000000000000008 /* QuickComposerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1000010000000000001008 /* QuickComposerCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +71,14 @@
 		E0C063ADAC083DA1C6D17980 /* DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDrop.swift; sourceTree = "<group>"; };
 		EB37D11A045FFA90BC8EF96C /* DODO2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DODO2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58DECE491FD935B90BB80CA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+        AA1000010000000000001001 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskItem.swift; path = Sources/DODO2/Model/TaskItem.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001002 /* TaskPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TaskPersistence.swift; path = Sources/DODO2/Store/TaskPersistence.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001003 /* PriorityMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PriorityMatrixView.swift; path = Sources/DODO2/UI/Matrix/PriorityMatrixView.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001004 /* MatrixOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MatrixOverlayView.swift; path = Sources/DODO2/UI/Matrix/MatrixOverlayView.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001005 /* HUDToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HUDToast.swift; path = Sources/DODO2/UI/Common/HUDToast.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001006 /* UIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIConst.swift; path = Sources/DODO2/UI/Design/UIConst.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001007 /* NewTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewTaskButton.swift; path = Sources/DODO2/UI/Board/NewTaskButton.swift; sourceTree = SOURCE_ROOT; };
+        AA1000010000000000001008 /* QuickComposerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuickComposerCard.swift; path = Sources/DODO2/UI/Board/QuickComposerCard.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -104,24 +120,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		684F1DC8689256E57CFA6E84 /* DODO2 */ = {
-			isa = PBXGroup;
-			children = (
-				7C82A70101BE9BA3387D4213 /* AppDelegate.swift */,
-				E00C1B253799D7CE5930E0D2 /* ContentView.swift */,
-				9A7B4093F1329DAD17B0143F /* DODO2.entitlements */,
-				7364C6EFCDEC240A196EB977 /* DODO2App.swift */,
-				18404397AC516A91B66B0670 /* HotKeyManager.swift */,
-				DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */,
-				A1DA90DAB72D14EF84B07994 /* Models */,
-				6C4450C345AA7D303B413F09 /* Services */,
-				0091A7CDAEF007E7F7319E51 /* Settings */,
-				2C9501F66EBBA91E5B75ECDD /* UI */,
-			);
-			name = DODO2;
-			path = Sources/DODO2;
-			sourceTree = "<group>";
-		};
+        684F1DC8689256E57CFA6E84 /* DODO2 */ = {
+            isa = PBXGroup;
+            children = (
+                7C82A70101BE9BA3387D4213 /* AppDelegate.swift */,
+                E00C1B253799D7CE5930E0D2 /* ContentView.swift */,
+                9A7B4093F1329DAD17B0143F /* DODO2.entitlements */,
+                7364C6EFCDEC240A196EB977 /* DODO2App.swift */,
+                18404397AC516A91B66B0670 /* HotKeyManager.swift */,
+                DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */,
+                A1DA90DAB72D14EF84B07994 /* Models */,
+                6C4450C345AA7D303B413F09 /* Services */,
+                0091A7CDAEF007E7F7319E51 /* Settings */,
+                2C9501F66EBBA91E5B75ECDD /* UI */,
+                AA1000010000000000001001 /* TaskItem.swift */,
+                AA1000010000000000001002 /* TaskPersistence.swift */,
+                AA1000010000000000001003 /* PriorityMatrixView.swift */,
+                AA1000010000000000001004 /* MatrixOverlayView.swift */,
+                AA1000010000000000001005 /* HUDToast.swift */,
+                AA1000010000000000001006 /* UIConst.swift */,
+                AA1000010000000000001007 /* NewTaskButton.swift */,
+                AA1000010000000000001008 /* QuickComposerCard.swift */,
+            );
+            name = DODO2;
+            path = Sources/DODO2;
+            sourceTree = "<group>";
+        };
 		6C4450C345AA7D303B413F09 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,30 +261,38 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		299B409382887162AAA1EC92 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41F712CB82731A836647505E /* AppDelegate.swift in Sources */,
-				9F7C491CBC10E79245934CCA /* BottomSheetRoot.swift in Sources */,
-				8BE6E66ABDC39C0BE50C3069 /* BrandTokens.swift in Sources */,
-				B0A35DDF293AFACE4D747CD6 /* ContentView.swift in Sources */,
-				4BD83623D10F14E384D3F46D /* DODO2App.swift in Sources */,
-				8D82EDD8669AEDE7787554C6 /* DragDrop.swift in Sources */,
-				4BF65C770D0469E0E3D1F6DA /* HeaderBar.swift in Sources */,
-				163C012A2C413C6AECD2E095 /* HotKeyManager.swift in Sources */,
-				256FBD85D3A63B5C4A034032 /* KeyPanel.swift in Sources */,
-				5C37B70A09C048121BB436C5 /* Label.swift in Sources */,
-				E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */,
-				332D98704F5DF313E5AAEE6B /* Persistence.swift in Sources */,
-				538E989FB9B940FDAFC34C6F /* PreferencesView.swift in Sources */,
-				5C62C3F022A7CD14DE4BE36E /* SettingsModel.swift in Sources */,
-				C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */,
-				75596F75403A48C8ACC023ED /* Task.swift in Sources */,
-				DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        299B409382887162AAA1EC92 /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                41F712CB82731A836647505E /* AppDelegate.swift in Sources */,
+                9F7C491CBC10E79245934CCA /* BottomSheetRoot.swift in Sources */,
+                8BE6E66ABDC39C0BE50C3069 /* BrandTokens.swift in Sources */,
+                B0A35DDF293AFACE4D747CD6 /* ContentView.swift in Sources */,
+                4BD83623D10F14E384D3F46D /* DODO2App.swift in Sources */,
+                8D82EDD8669AEDE7787554C6 /* DragDrop.swift in Sources */,
+                4BF65C770D0469E0E3D1F6DA /* HeaderBar.swift in Sources */,
+                163C012A2C413C6AECD2E095 /* HotKeyManager.swift in Sources */,
+                256FBD85D3A63B5C4A034032 /* KeyPanel.swift in Sources */,
+                5C37B70A09C048121BB436C5 /* Label.swift in Sources */,
+                E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */,
+                332D98704F5DF313E5AAEE6B /* Persistence.swift in Sources */,
+                538E989FB9B940FDAFC34C6F /* PreferencesView.swift in Sources */,
+                5C62C3F022A7CD14DE4BE36E /* SettingsModel.swift in Sources */,
+                C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */,
+                75596F75403A48C8ACC023ED /* Task.swift in Sources */,
+                DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */,
+                AA1000010000000000000001 /* TaskItem.swift in Sources */,
+                AA1000010000000000000002 /* TaskPersistence.swift in Sources */,
+                AA1000010000000000000003 /* PriorityMatrixView.swift in Sources */,
+                AA1000010000000000000004 /* MatrixOverlayView.swift in Sources */,
+                AA1000010000000000000005 /* HUDToast.swift in Sources */,
+                AA1000010000000000000006 /* UIConst.swift in Sources */,
+                AA1000010000000000000007 /* NewTaskButton.swift in Sources */,
+                AA1000010000000000000008 /* QuickComposerCard.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 		3C95C680884C25DF9703DF88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
