@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'DODO2Tests' in project 'DODO2'
+➜ Explicit dependency on target 'DODO2' in project 'DODO2'
+Target 'DODO2' in project 'DODO2' (no dependencies)

@@ -6,6 +6,9 @@ struct DODO2App: App {
 
     var body: some Scene {
         // No main window — panel toggled via hotkeys/command
+        WindowGroup("Priority Matrix") {
+            PriorityMatrixView()
+        }
         Settings {
             PreferencesView()
         }
@@ -48,6 +51,25 @@ struct DODO2App: App {
                     NotificationCenter.default.post(name: .requestDeleteCompleted, object: nil)
                 }
                 .keyboardShortcut(.delete, modifiers: [.command, .shift])
+
+                Divider()
+                Button("Open Priority Matrix…") {
+                    // Open the dedicated window
+                    NSApp.activate(ignoringOtherApps: true)
+                    // Using SwiftUI scene API ensures the window exists; bring to front
+                    // Attempt to find a window titled "Priority Matrix" and order front
+                    if let win = NSApp.windows.first(where: { $0.title == "Priority Matrix" }) {
+                        win.makeKeyAndOrderFront(nil)
+                    } else {
+                        // Fallback: create a temporary window hosting the view
+                        let w = NSWindow(contentRect: NSRect(x: 200, y: 200, width: 900, height: 600),
+                                         styleMask: [.titled, .closable, .resizable],
+                                         backing: .buffered, defer: false)
+                        w.title = "Priority Matrix"
+                        w.contentView = NSHostingView(rootView: PriorityMatrixView())
+                        w.makeKeyAndOrderFront(nil)
+                    }
+                }
             }
             CommandGroup(replacing: .appSettings) {
                 Button("Preferences…") {

@@ -27,6 +27,10 @@
 		C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD92543E80125B5A9863D48C /* ShortcutCaptureView.swift */; };
 		DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4AA66EEFF7940FDF00D0D2 /* TaskCardView.swift */; };
 		E663179B0BC53E4451CBFC9B /* PanelWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */; };
+		B1C2D3E4F5A6010101010101 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6010101010101 /* TaskItem.swift */; };
+		B1C2D3E4F5A6010101010102 /* TaskPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6010101010102 /* TaskPersistence.swift */; };
+		B1C2D3E4F5A6010101010103 /* PriorityMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6010101010103 /* PriorityMatrixView.swift */; };
+		B1C2D3E4F5A6010101010104 /* TaskItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6010101010104 /* TaskItemTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		E0C063ADAC083DA1C6D17980 /* DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDrop.swift; sourceTree = "<group>"; };
 		EB37D11A045FFA90BC8EF96C /* DODO2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DODO2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58DECE491FD935B90BB80CA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6010101010101 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6010101010102 /* TaskPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPersistence.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6010101010103 /* PriorityMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityMatrixView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6010101010104 /* TaskItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -80,6 +88,7 @@
 			children = (
 				8EE0A7A1A69F3A7C2AC8C4BA /* BottomSheet */,
 				92619CBF6634EB288846C1E5 /* Theme */,
+				C1D2E3F4A5B6010101010103 /* Matrix */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -90,6 +99,7 @@
 				7820B5EEA65DDAA509E2B5C6 /* DODO2Tests.swift */,
 				9B06B4010FE02EFE832E611A /* PersistenceTests.swift */,
 				AAC0C2A172EE6D8271997E05 /* SettingsTests.swift */,
+				A1B2C3D4E5F6010101010104 /* TaskItemTests.swift */,
 			);
 			name = DODO2Tests;
 			path = Tests/DODO2Tests;
@@ -114,12 +124,22 @@
 				18404397AC516A91B66B0670 /* HotKeyManager.swift */,
 				DB67EFD48CF9208F4026BEA2 /* PanelWindowController.swift */,
 				A1DA90DAB72D14EF84B07994 /* Models */,
+				C1D2E3F4A5B6010101010101 /* Model */,
 				6C4450C345AA7D303B413F09 /* Services */,
+				C1D2E3F4A5B6010101010102 /* Store */,
 				0091A7CDAEF007E7F7319E51 /* Settings */,
 				2C9501F66EBBA91E5B75ECDD /* UI */,
 			);
 			name = DODO2;
 			path = Sources/DODO2;
+			sourceTree = "<group>";
+		};
+		C1D2E3F4A5B6010101010101 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6010101010101 /* TaskItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6C4450C345AA7D303B413F09 /* Services */ = {
@@ -129,6 +149,14 @@
 				70FCEAAD3EF650BCE67E1202 /* Persistence.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C1D2E3F4A5B6010101010102 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6010101010102 /* TaskPersistence.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		8EE0A7A1A69F3A7C2AC8C4BA /* BottomSheet */ = {
@@ -150,6 +178,14 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		C1D2E3F4A5B6010101010103 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6010101010103 /* PriorityMatrixView.swift */,
+			);
+			path = Matrix;
+			sourceTree = "<group>";
+		};
 		930C9F602D456EA5FE731FD9 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +205,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+/* Add Matrix group into UI group children */
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +295,9 @@
 				C3F13C94336537AEEED4DE10 /* ShortcutCaptureView.swift in Sources */,
 				75596F75403A48C8ACC023ED /* Task.swift in Sources */,
 				DFAEC5338B7BF2CDAD6B66D8 /* TaskCardView.swift in Sources */,
+				B1C2D3E4F5A6010101010101 /* TaskItem.swift in Sources */,
+				B1C2D3E4F5A6010101010102 /* TaskPersistence.swift in Sources */,
+				B1C2D3E4F5A6010101010103 /* PriorityMatrixView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +308,7 @@
 				C27E584918CABB50BFB8364E /* DODO2Tests.swift in Sources */,
 				B01424105B9C964DDA878C20 /* PersistenceTests.swift in Sources */,
 				63C258D46C87B2B35DBD9F42 /* SettingsTests.swift in Sources */,
+				B1C2D3E4F5A6010101010104 /* TaskItemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +328,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -302,6 +344,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

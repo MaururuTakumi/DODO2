@@ -1,4 +1,5 @@
 import XCTest
+import Carbon.HIToolbox
 @testable import DODO2
 
 final class SettingsTests: XCTestCase {
@@ -22,4 +23,3 @@ final class SettingsTests: XCTestCase {
         XCTAssertTrue(s.contains("Space"))
     }
 }
-
