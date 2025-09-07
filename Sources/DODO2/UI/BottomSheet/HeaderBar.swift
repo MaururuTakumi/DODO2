@@ -13,6 +13,7 @@ struct HeaderBar: View {
     let counts: [String: Int]
     let suggestNameForTask: (UUID) -> String?
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
+    var onTapOpenMatrix: () -> Void = {}
 
     @FocusState private var quickAddFocused: Bool
     @State private var showLabelPopover = false
@@ -95,6 +96,11 @@ struct HeaderBar: View {
                 SwiftUI.Label("Clear Completed…", systemImage: "trash.slash")
             }
             .help("Delete completed tasks in current scope")
+
+            Button(action: { onTapOpenMatrix() }) {
+                SwiftUI.Label("Matrix", systemImage: "square.grid.2x2")
+            }
+            .help("Open priority matrix")
 
             SearchField(text: $searchText)
                 .frame(width: 220)

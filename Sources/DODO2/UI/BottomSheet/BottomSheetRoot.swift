@@ -15,6 +15,7 @@ struct BottomSheetRoot: View {
     @State private var showClearConfirm: Bool = false
     @State private var clearTargetCount: Int = 0
     @State private var clearScopeTitle: String = "all labels"
+    @State private var isMatrixPresented: Bool = false
 
     private let onRequestClose: () -> Void
 
@@ -45,7 +46,8 @@ struct BottomSheetRoot: View {
                 },
                 reassignTasksFromDeletedLabel: { deletedId, fallbackId in
                     for i in tasks.indices { if tasks[i].labelId == deletedId { tasks[i].labelId = fallbackId } }
-                }
+                },
+                onTapOpenMatrix: { isMatrixPresented = true }
             )
             Divider()
             ScrollView {
@@ -54,7 +56,7 @@ struct BottomSheetRoot: View {
                         let label = labels.first(where: { $0.id == task.labelId })
                         TaskCardView(task: task, label: label, toggleDone: toggleDone(_:), onRequestDelete: {
                             deleteTask(id: task.id)
-                        })
+                        }, onToggleImportant: { _ in toggleImportant(task) }, onToggleUrgent: { _ in toggleUrgent(task) })
                             .contentShape(RoundedRectangle(cornerRadius: BrandTokens.cornerRadius, style: .continuous))
                             .onTapGesture { selectedTaskId = task.id }
                             .overlay(
@@ -96,6 +98,10 @@ struct BottomSheetRoot: View {
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
                 .padding(.bottom, 6)
             }
+        }
+        .sheet(isPresented: $isMatrixPresented) {
+            MatrixOverlayView(items: $tasks)
+                .frame(minWidth: 900, minHeight: 560)
         }
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }
@@ -173,6 +179,20 @@ struct BottomSheetRoot: View {
     private func toggleDone(_ task: Task) {
         if let idx = tasks.firstIndex(of: task) {
             tasks[idx].done.toggle()
+        }
+    }
+
+    private func toggleImportant(_ task: Task) {
+        if let idx = tasks.firstIndex(of: task) {
+            let newVal = tasks[idx].importance >= 2 ? 1 : 3
+            tasks[idx] = tasks[idx].updating(importance: newVal)
+        }
+    }
+
+    private func toggleUrgent(_ task: Task) {
+        if let idx = tasks.firstIndex(of: task) {
+            let newVal = tasks[idx].urgency >= 2 ? 1 : 3
+            tasks[idx] = tasks[idx].updating(urgency: newVal)
         }
     }
 

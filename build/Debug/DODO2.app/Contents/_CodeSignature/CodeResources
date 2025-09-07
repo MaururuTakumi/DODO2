@@ -91,10 +91,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			RZCCS88Qzzp/9giVfCBDUtLRU+M=
+			Vytoy5yzc196aKaYZPq5p/BefkM=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"4590824bcf10cf3a7ff608957c204352d2d153e3" or cdhash H"6b0b2e6ef20cfb0d4d49db6e5054a0fcf7a2bcd1"</string>
+			<string>cdhash H"572b68cb9cb3735f7a68a69864fab9a7f05e7e43" or cdhash H"d1ac9b1d1348de06ef683a9defd30ab800297a68"</string>
 		</dict>
 	</dict>
 	<key>rules</key>

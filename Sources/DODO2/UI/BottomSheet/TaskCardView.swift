@@ -6,6 +6,8 @@ struct TaskCardView: View {
     let label: Label?
     let toggleDone: (Task) -> Void
     var onRequestDelete: (() -> Void)? = nil
+    var onToggleImportant: ((Task) -> Void)? = nil
+    var onToggleUrgent: ((Task) -> Void)? = nil
 
     private var badgeColor: Color { label?.color.color ?? .accentColor }
 
@@ -18,6 +20,13 @@ struct TaskCardView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 Spacer(minLength: 0)
+                // Priority pills
+                if let onToggleImportant {
+                    PillButton(active: task.importance >= 2, label: "Important", systemImage: "star.fill") { onToggleImportant(task) }
+                }
+                if let onToggleUrgent {
+                    PillButton(active: task.urgency >= 2, label: "Urgent", systemImage: "bolt.fill") { onToggleUrgent(task) }
+                }
                 ToggleDoneArea(done: task.done) { toggleDone(task) }
             }
 
@@ -78,5 +87,27 @@ private struct ToggleDoneArea: View {
         .onHover { hover = $0 }
         .opacity(hover ? 0.9 : 1.0)
         .accessibilityLabel(done ? "Mark as not done" : "Mark as done")
+    }
+}
+
+// Reusable pill button
+private struct PillButton: View {
+    var active: Bool
+    var label: String
+    var systemImage: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            SwiftUI.Label(label, systemImage: systemImage)
+                .labelStyle(.titleAndIcon)
+                .font(.caption)
+                .padding(.horizontal, 8).padding(.vertical, 5)
+                .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+        .background((active ? Color.accentColor.opacity(0.20) : Color.gray.opacity(0.15)))
+        .overlay(Capsule().stroke(active ? Color.accentColor : Color.gray.opacity(0.35), lineWidth: 1))
+        .clipShape(Capsule())
+        .help(label)
     }
 }
