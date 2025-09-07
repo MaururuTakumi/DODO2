@@ -68,35 +68,33 @@ struct MatrixOverlayView: View {
 
     @ViewBuilder
     private var content: some View {
-        GeometryReader { geo in
-            let totalH = geo.size.height
-            let spacing: CGFloat = 12
-            let minCell: CGFloat = 220
-            let calc = (totalH - spacing) / 2
-            let cellH = max(minCell, calc)
-
-            ScrollView(.vertical) {
-                if let q = filter.quadrant {
-                    VStack(spacing: spacing) {
-                        quadrantView(q, title: q.title, minHeight: cellH, weight: q == .doFirst ? 1.08 : 1.0)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.bottom, 28)
-                } else {
-                    LazyVGrid(
-                        columns: [GridItem(.flexible(), spacing: spacing), GridItem(.flexible(), spacing: spacing)],
-                        spacing: spacing
-                    ) {
-                        quadrantView(.doFirst,   title: "Do First",   minHeight: cellH, weight: 1.08)
-                        quadrantView(.schedule,  title: "Schedule",   minHeight: cellH)
-                        quadrantView(.delegate,  title: "Delegate",   minHeight: cellH)
-                        quadrantView(.eliminate, title: "Eliminate",  minHeight: cellH)
-                    }
-                    .padding(.bottom, 28)
+        let spacing: CGFloat = 12
+        let minCell: CGFloat = 220
+        ScrollView(.vertical) {
+            if let q = filter.quadrant {
+                VStack(spacing: spacing) {
+                    quadrantView(q, title: q.title, minHeight: minCell, weight: q == .doFirst ? 1.08 : 1.0)
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.bottom, 48)
+            } else {
+                LazyVGrid(
+                    columns: [GridItem(.flexible(), spacing: spacing), GridItem(.flexible(), spacing: spacing)],
+                    spacing: spacing
+                ) {
+                    quadrantView(.doFirst,   title: "Do First",   minHeight: minCell, weight: 1.08)
+                    quadrantView(.schedule,  title: "Schedule",   minHeight: minCell)
+                    quadrantView(.delegate,  title: "Delegate",   minHeight: minCell)
+                    quadrantView(.eliminate, title: "Eliminate",  minHeight: minCell)
+                }
+                .padding(.bottom, 48)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        #if os(macOS)
+        .contentMargins(.vertical, 4)
+        #endif
+        .scrollIndicators(.visible)
     }
 
     private func quadrantView(_ q: Quadrant, title: String, minHeight: CGFloat, weight: CGFloat = 1.0) -> AnyView {
