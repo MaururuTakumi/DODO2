@@ -33,6 +33,21 @@ struct DODO2App: App {
                     }
                     .keyboardShortcut(KeyEquivalent(Character("\(i)")), modifiers: [.command])
                 }
+
+                Divider()
+                Button("Delete Selected Task") {
+                    NotificationCenter.default.post(name: .requestDeleteSelected, object: nil)
+                }
+                // SwiftUI doesn't expose backspace symbol easily; key monitor already handles ⌘⌫.
+                Button("Undo Delete") {
+                    NotificationCenter.default.post(name: .requestUndoDelete, object: nil)
+                }
+                .keyboardShortcut("z", modifiers: [.command])
+
+                Button("Delete Completed Tasks") {
+                    NotificationCenter.default.post(name: .requestDeleteCompleted, object: nil)
+                }
+                .keyboardShortcut(.delete, modifiers: [.command, .shift])
             }
             CommandGroup(replacing: .appSettings) {
                 Button("Preferences…") {
@@ -54,4 +69,7 @@ extension Notification.Name {
     static let _internalFocusQuickAddNow = Notification.Name("_InternalFocusQuickAddNow")
     static let navigateSelection = Notification.Name("NavigateSelection")
     static let deleteSelection = Notification.Name("DeleteSelection")
+    static let requestDeleteSelected = Notification.Name("requestDeleteSelected")
+    static let requestDeleteCompleted = Notification.Name("requestDeleteCompleted")
+    static let requestUndoDelete = Notification.Name("requestUndoDelete")
 }

@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'DODO2' in project 'DODO2' (no dependencies)

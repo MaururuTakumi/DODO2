@@ -9,11 +9,15 @@ targets:
     bundleId: com.honkoma.DODO2
     sources:
       - path: Sources/DODO2
+    resources:
+      - path: Assets.xcassets
     entitlements:
       path: Sources/DODO2/DODO2.entitlements
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_LSUIElement: YES
   DODO2Tests:
     type: bundle.unit-test
     platform: macOS

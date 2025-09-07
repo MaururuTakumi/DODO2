@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 struct BottomSheetRoot: View {
     @State private var tasks: [Task]
@@ -7,6 +8,13 @@ struct BottomSheetRoot: View {
     @State private var quickAddText: String = ""
     @State private var selectedLabels: Set<String> = [] // label ids
     @State private var selectedTaskId: UUID? = nil
+    @State private var showUndo: Bool = false
+    @State private var lastDeleted: (task: Task, index: Int)? = nil
+    @State private var lastBulkDeletedCount: Int? = nil
+    @State private var lastClearSnapshot: [Task]? = nil
+    @State private var showClearConfirm: Bool = false
+    @State private var clearTargetCount: Int = 0
+    @State private var clearScopeTitle: String = "all labels"
 
     private let onRequestClose: () -> Void
 
@@ -26,6 +34,11 @@ struct BottomSheetRoot: View {
                 selectedLabels: $selectedLabels,
                 onCommitQuickAdd: addTask,
                 onAssignLabelToTaskId: assignLabel(taskId:labelId:),
+                onRequestClearCompleted: { prepareClearCompleted() },
+                onRequestDeleteSelected: {
+                    if let sel = selectedTaskId { deleteTask(id: sel) }
+                },
+                hasSelectedTask: selectedTaskId != nil,
                 counts: countsByLabel(),
                 suggestNameForTask: { tid in
                     tasks.first(where: { $0.id == tid })?.title.split(separator: " ").first.map { String($0).capitalized }
@@ -39,7 +52,9 @@ struct BottomSheetRoot: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 260), spacing: 16)], spacing: 16) {
                     ForEach(filteredTasks()) { task in
                         let label = labels.first(where: { $0.id == task.labelId })
-                        TaskCardView(task: task, label: label, toggleDone: toggleDone(_:))
+                        TaskCardView(task: task, label: label, toggleDone: toggleDone(_:), onRequestDelete: {
+                            deleteTask(id: task.id)
+                        })
                             .contentShape(RoundedRectangle(cornerRadius: BrandTokens.cornerRadius, style: .continuous))
                             .onTapGesture { selectedTaskId = task.id }
                             .overlay(
@@ -52,6 +67,34 @@ struct BottomSheetRoot: View {
                 .padding(.horizontal, BrandTokens.gutter)
                 .padding(.vertical, 12)
                 .animation(.easeInOut(duration: 0.18), value: tasks)
+            }
+            if showUndo {
+                HStack(spacing: 12) {
+                    Text("Task deleted")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    Button("Undo") {
+                        undoLastDelete()
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(10)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
+                .padding(.vertical, 8)
+            }
+            if let n = lastBulkDeletedCount, n > 0 {
+                HStack(spacing: 12) {
+                    Text("Deleted \(n) completed")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                    Button("Undo") {
+                        undoLastClearCompleted()
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+                .padding(10)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
+                .padding(.bottom, 6)
             }
         }
         .onChange(of: tasks) { _ in saveStore() }
@@ -71,7 +114,28 @@ struct BottomSheetRoot: View {
             moveSelection(by: dir)
         }
         .onReceive(NotificationCenter.default.publisher(for: .deleteSelection)) { _ in
-            deleteSelectedWithConfirm()
+            if let sel = selectedTaskId { deleteTask(id: sel) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .requestDeleteSelected)) { _ in
+            if let sel = selectedTaskId { deleteTask(id: sel) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .requestUndoDelete)) { _ in
+            undoLastDelete()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .requestDeleteCompleted)) { _ in
+            prepareClearCompleted()
+        }
+        .alert("Delete completed tasks?", isPresented: $showClearConfirm) {
+            Button("Cancel", role: .cancel) {}
+            Button("Delete", role: .destructive) {
+                let removed = performClearCompleted()
+                if removed > 0 {
+                    withAnimation { lastBulkDeletedCount = removed }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { withAnimation { lastBulkDeletedCount = nil } }
+                }
+            }
+        } message: {
+            Text("This will delete \(clearTargetCount) completed task(s) in \(clearScopeTitle). This cannot be easily undone.")
         }
     }
 
@@ -134,18 +198,67 @@ struct BottomSheetRoot: View {
         selectedTaskId = visible[newIndex].id
     }
 
-    private func deleteSelectedWithConfirm() {
-        guard let sel = selectedTaskId, let idx = tasks.firstIndex(where: { $0.id == sel }) else { return }
-        let alert = NSAlert()
-        alert.messageText = "Delete task?"
-        alert.informativeText = "This action cannot be undone."
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "Delete")
-        alert.addButton(withTitle: "Cancel")
-        if alert.runModal() == .alertFirstButtonReturn {
-            let nextIndex = min(idx, tasks.count - 2)
-            tasks.remove(at: idx)
-            if tasks.indices.contains(nextIndex) { selectedTaskId = tasks[nextIndex].id } else { selectedTaskId = nil }
+    private func deleteTask(id: UUID) {
+        guard let idx = tasks.firstIndex(where: { $0.id == id }) else { return }
+        let removed = tasks.remove(at: idx)
+        lastDeleted = (task: removed, index: idx)
+        // adjust selection
+        if tasks.indices.contains(idx) { selectedTaskId = tasks[idx].id } else { selectedTaskId = nil }
+        withAnimation { showUndo = true }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            withAnimation { showUndo = false }
         }
+    }
+
+    private func undoLastDelete() {
+        guard let l = lastDeleted else { return }
+        let insertAt = min(l.index, tasks.count)
+        tasks.insert(l.task, at: insertAt)
+        selectedTaskId = l.task.id
+        lastDeleted = nil
+    }
+
+    private func currentScopePredicate() -> (Task) -> Bool {
+        if selectedLabels.isEmpty { return { _ in true } }
+        let set = selectedLabels
+        return { task in set.contains(task.labelId) }
+    }
+
+    private func currentScopeTitleText() -> String {
+        if selectedLabels.isEmpty { return "all labels" }
+        if selectedLabels.count == 1, let id = selectedLabels.first, let name = labels.first(where: { $0.id == id })?.name {
+            return "\u{201C}\(name)\u{201D}"
+        }
+        return "selected labels"
+    }
+
+    private func prepareClearCompleted() {
+        let predicate = currentScopePredicate()
+        clearTargetCount = tasks.filter { $0.done && predicate($0) }.count
+        clearScopeTitle = currentScopeTitleText()
+        if clearTargetCount > 0 {
+            showClearConfirm = true
+        } else {
+            NSSound.beep()
+        }
+    }
+
+    @discardableResult
+    private func performClearCompleted() -> Int {
+        let predicate = currentScopePredicate()
+        let before = tasks
+        let removed = before.filter { $0.done && predicate($0) }.count
+        guard removed > 0 else { return 0 }
+        lastClearSnapshot = before
+        tasks.removeAll { $0.done && predicate($0) }
+        saveStore()
+        return removed
+    }
+
+    private func undoLastClearCompleted() {
+        guard let snap = lastClearSnapshot else { return }
+        tasks = snap
+        lastClearSnapshot = nil
+        saveStore()
     }
 }

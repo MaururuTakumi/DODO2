@@ -10,6 +10,8 @@ final class PanelWindowController: NSWindowController {
 
     private var hostingView: NSHostingView<BottomSheetRoot>?
     private var keyMonitor: Any?
+    private var outsideClickGlobal: Any?
+    private var outsideClickLocal: Any?
 
     private init() {
         let chosenScreen = PanelWindowController.targetScreen() ?? NSScreen.main
@@ -19,16 +21,20 @@ final class PanelWindowController: NSWindowController {
         } else {
             frame = NSRect(x: 200, y: 200, width: 800, height: panelHeight)
         }
-        // Use a key-activating, borderless panel
-        let style: NSWindow.StyleMask = [.borderless]
-        let panel = NSPanel(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
+        // Use a key-capable panel with a hidden title bar for a borderless look
+        let style: NSWindow.StyleMask = [.titled, .fullSizeContentView]
+        let panel = KeyPanel(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
 
         panel.titleVisibility = NSWindow.TitleVisibility.hidden
         panel.titlebarAppearsTransparent = true
+        panel.standardWindowButton(.closeButton)?.isHidden = true
+        panel.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        panel.standardWindowButton(.zoomButton)?.isHidden = true
         panel.isOpaque = false
         panel.backgroundColor = NSColor.clear
         panel.hasShadow = true
-        panel.hidesOnDeactivate = false
+        // Hide automatically when app deactivates (user clicks another app)
+        panel.hidesOnDeactivate = true
         panel.becomesKeyOnlyIfNeeded = false
         panel.level = NSWindow.Level.floating
         // Use exactly one combination; prefer moveToActiveSpace
@@ -80,8 +86,12 @@ final class PanelWindowController: NSWindowController {
         NSLog("[DODO2] Before show — styleMask=%@ nonactivating=%@ isKey=%d canBecomeKey=%d",
               String(describing: panel.styleMask), String(hadNonActivating), panel.isKeyWindow, panel.canBecomeKey)
         if hadNonActivating { NSLog("[DODO2][ERR] nonactivatingPanel present — inputs cannot focus") }
-        NSApp.activate(ignoringOtherApps: true)
+        // 1) Move to current Space first (no Space switch)
         panel.alphaValue = 0.0
+        panel.orderFrontRegardless()
+        // 2) Activate as an agent; won't switch Desktops
+        NSApp.activate(ignoringOtherApps: true)
+        // 3) Become key so text inputs focus
         panel.makeKeyAndOrderFront(nil)
         let finalFrame = panel.frame
         var startFrame = finalFrame
@@ -124,9 +134,11 @@ final class PanelWindowController: NSWindowController {
                 NotificationCenter.default.post(name: .focusQuickAdd, object: nil)
             }
         }
-        NSLog("[DODO2] After show — isKey=%d canBecomeKey=%d", panel.isKeyWindow, panel.canBecomeKey)
+        NSLog("[DODO2] After show — isKey=%d canBecomeKey=%d firstResponder=%@",
+              panel.isKeyWindow, panel.canBecomeKey, String(describing: panel.firstResponder))
         NSLog("[DODO2] Panel shown")
         installKeyMonitor()
+        installOutsideClickMonitors()
     }
 
     func hide(animated: Bool) {
@@ -163,6 +175,7 @@ final class PanelWindowController: NSWindowController {
         }
         NSLog("[DODO2] Panel hidden")
         removeKeyMonitor()
+        removeOutsideClickMonitors()
     }
 
     func toggle() {
@@ -227,5 +240,39 @@ final class PanelWindowController: NSWindowController {
 
     private func removeKeyMonitor() {
         if let mon = keyMonitor { NSEvent.removeMonitor(mon); keyMonitor = nil }
+    }
+
+    // Close when clicking anywhere outside the panel
+    private func installOutsideClickMonitors() {
+        guard outsideClickGlobal == nil, outsideClickLocal == nil else { return }
+        let mask: NSEvent.EventTypeMask = [.leftMouseDown, .rightMouseDown, .otherMouseDown]
+        outsideClickGlobal = NSEvent.addGlobalMonitorForEvents(matching: mask) { [weak self] _ in
+            guard let self = self, let panel = self.window else { return }
+            let point = NSEvent.mouseLocation
+            if !panel.frame.contains(point) {
+                self.hide(animated: true)
+            }
+        }
+        outsideClickLocal = NSEvent.addLocalMonitorForEvents(matching: mask) { [weak self] event in
+            guard let self = self, let panel = self.window else { return event }
+            // If the click is in another window (or outside), close and swallow
+            let locationInScreen = event.locationInWindow
+            let screenPoint: NSPoint
+            if let w = event.window {
+                screenPoint = w.convertToScreen(NSRect(origin: locationInScreen, size: .zero)).origin
+            } else {
+                screenPoint = NSEvent.mouseLocation
+            }
+            if !panel.frame.contains(screenPoint) {
+                self.hide(animated: true)
+                return nil
+            }
+            return event
+        }
+    }
+
+    private func removeOutsideClickMonitors() {
+        if let g = outsideClickGlobal { NSEvent.removeMonitor(g); outsideClickGlobal = nil }
+        if let l = outsideClickLocal { NSEvent.removeMonitor(l); outsideClickLocal = nil }
     }
 }

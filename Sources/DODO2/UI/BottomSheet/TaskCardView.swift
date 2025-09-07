@@ -1,16 +1,19 @@
 import SwiftUI
+import AppKit
 
 struct TaskCardView: View {
     let task: Task
     let label: Label?
     let toggleDone: (Task) -> Void
+    var onRequestDelete: (() -> Void)? = nil
+
+    private var badgeColor: Color { label?.color.color ?? .accentColor }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .center, spacing: 8) {
-                Circle()
-                    .fill((label?.color.color ?? .accentColor))
-                    .frame(width: 8, height: 8)
+        CardContainer {
+            // header (label dot + name + done toggle)
+            HStack(spacing: 8) {
+                Circle().fill(badgeColor).frame(width: 8, height: 8)
                 Text(label?.name ?? "")
                     .font(.caption)
                     .foregroundColor(.secondary)
@@ -18,29 +21,44 @@ struct TaskCardView: View {
                 ToggleDoneArea(done: task.done) { toggleDone(task) }
             }
 
+            // title
             Text(task.title)
                 .font(BrandTokens.titleFont)
                 .foregroundColor(.primary)
                 .strikethrough(task.done, color: .secondary)
                 .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 12)
-        .background(
-            RoundedRectangle(cornerRadius: BrandTokens.cornerRadius, style: .continuous)
-                .fill(Color(NSColor.windowBackgroundColor).opacity(0.7))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: BrandTokens.cornerRadius, style: .continuous)
-                .stroke(Color.black.opacity(0.05))
-        )
-        .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 2)
-        .onDrag {
-            let payload = NSString(string: "task:\(task.id.uuidString)")
-            return NSItemProvider(object: payload)
+        .onDrag { NSItemProvider(object: NSString(string: "task:\(task.id.uuidString)")) }
+        .contextMenu {
+            Button(role: .destructive) { onRequestDelete?() } label: {
+                SwiftUI.Label("Delete", systemImage: "trash")
+            }
         }
         .accessibilityLabel(Text("Task \(task.title)"))
         .accessibilityHint(Text("Double tap to toggle done, drag to a label to assign"))
+    }
+}
+
+// 背景・枠線・影を担当（型を単純に保つ）
+private struct CardContainer<Content: View>: View {
+    private let content: Content
+    init(@ViewBuilder content: () -> Content) { self.content = content() }
+
+    var body: some View {
+        let r = BrandTokens.cornerRadius
+        VStack(alignment: .leading, spacing: 6) { content }
+            .padding(.vertical, 8)
+            .padding(.horizontal, 12)
+            .background(
+                RoundedRectangle(cornerRadius: r, style: .continuous)
+                    .fill(Color(NSColor.windowBackgroundColor).opacity(0.7))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: r, style: .continuous)
+                    .stroke(Color.black.opacity(0.05))
+            )
+            .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 2)
+            .contentShape(Rectangle()) // 単純な型でヒット判定
     }
 }
 
@@ -48,20 +66,17 @@ private struct ToggleDoneArea: View {
     var done: Bool
     var action: () -> Void
     @State private var hover = false
+
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 6) {
-                Image(systemName: done ? "checkmark.circle.fill" : "circle")
-                    .foregroundColor(done ? .accentColor : .secondary)
-            }
-            .contentShape(Rectangle())
-            .frame(width: 36, height: 28)
-            .background(RoundedRectangle(cornerRadius: 8, style: .continuous).fill(hover ? Color.secondary.opacity(0.12) : .clear))
+            Image(systemName: done ? "checkmark.circle.fill" : "circle")
+                .foregroundStyle(done ? AnyShapeStyle(.tint) : AnyShapeStyle(.secondary))
+                .imageScale(.large)
         }
         .buttonStyle(.plain)
+        .contentShape(Rectangle())
         .onHover { hover = $0 }
-        .accessibilityElement(children: .ignore)
-        .accessibilityValue(Text(done ? "checked" : "unchecked"))
-        .accessibilityLabel(Text("Done"))
+        .opacity(hover ? 0.9 : 1.0)
+        .accessibilityLabel(done ? "Mark as not done" : "Mark as done")
     }
 }
