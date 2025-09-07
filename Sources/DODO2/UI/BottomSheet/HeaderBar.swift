@@ -15,7 +15,6 @@ struct HeaderBar: View {
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
     var isMatrixOpen: Bool = false
     var onToggleMatrix: () -> Void = {}
-    @AppStorage("cardDensity") private var densityRaw: String = CardDensity.comfy.rawValue
     @AppStorage("didSeeMatrixCoachmark") private var didSeeMatrixCoachmark: Bool = false
     @State private var showCoachmark: Bool = false
 
@@ -113,15 +112,7 @@ struct HeaderBar: View {
             .controlSize(.small)
             .keyboardShortcut("m", modifiers: [.command, .shift])
 
-            Menu {
-                Picker("Card Density", selection: $densityRaw) {
-                    ForEach(CardDensity.allCases) { d in Text(d.title).tag(d.rawValue) }
-                }
-            } label: {
-                SwiftUI.Label("Density", systemImage: "square.grid.3x1.below.line.grid.1x2")
-            }
-            .controlSize(.small)
-            .help("Card height: Compact / Comfy / Spacious")
+            // Density menu removed to reduce crowding
             .popover(isPresented: $showCoachmark, arrowEdge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Priority Matrix")

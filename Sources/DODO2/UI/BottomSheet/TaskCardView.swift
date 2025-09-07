@@ -10,7 +10,7 @@ struct TaskCardView: View {
     var onToggleUrgent: ((Task) -> Void)? = nil
 
     private var badgeColor: Color { label?.color.color ?? .accentColor }
-    @Environment(\.cardMetrics) private var M
+    // Use fixed compact metrics
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -29,7 +29,7 @@ struct TaskCardView: View {
                 MatrixMiniBadge(quadrant: task.quadrant)
                 ToggleDoneArea(done: task.done) { toggleDone(task) }
             }
-            .controlSize(M.controlSize)
+            .controlSize(UIConst.cardControlSize)
 
             Text(task.title)
                 .font(.headline.weight(.semibold))
@@ -44,20 +44,20 @@ struct TaskCardView: View {
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
         }
-        .padding(.vertical, M.vPad)
-        .padding(.horizontal, M.hPad)
-        .frame(height: M.height, alignment: .topLeading)
+        .padding(.vertical, UIConst.cardVPad)
+        .padding(.horizontal, UIConst.cardHPad)
+        .frame(height: UIConst.cardHeight, alignment: .topLeading)
         .frame(minWidth: 260)
         .background(
-            RoundedRectangle(cornerRadius: M.corner, style: .continuous)
+            RoundedRectangle(cornerRadius: UIConst.cardCorner, style: .continuous)
                 .fill(Color(NSColor.windowBackgroundColor).opacity(0.7))
         )
         .overlay(
-            RoundedRectangle(cornerRadius: M.corner, style: .continuous)
+            RoundedRectangle(cornerRadius: UIConst.cardCorner, style: .continuous)
                 .stroke(Color.black.opacity(0.05))
         )
         .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 2)
-        .contentShape(RoundedRectangle(cornerRadius: M.corner, style: .continuous))
+        .contentShape(RoundedRectangle(cornerRadius: UIConst.cardCorner, style: .continuous))
         .onDrag { NSItemProvider(object: NSString(string: "task:\(task.id.uuidString)")) }
         .contextMenu {
             Button(role: .destructive) { onRequestDelete?() } label: {

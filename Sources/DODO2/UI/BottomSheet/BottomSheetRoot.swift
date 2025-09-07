@@ -115,7 +115,6 @@ struct BottomSheetRoot: View {
                 .zIndex(10)
         }
         }
-        .withBoardEnvironment()
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }
         .onExitCommand(perform: onRequestClose)
