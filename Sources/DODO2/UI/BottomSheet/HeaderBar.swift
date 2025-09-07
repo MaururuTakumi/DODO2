@@ -27,10 +27,11 @@ struct HeaderBar: View {
 
     var body: some View {
         HStack(spacing: BrandTokens.gutter) {
-            QuickAddField(text: $quickAddText, onCommit: commitQuickAdd)
-                .frame(minWidth: 260, maxWidth: 360)
-                .accessibilityLabel(Text("Quick Add"))
-                .accessibilityHint(Text("Type a title and press Return to add"))
+            NewTaskButton {
+                NotificationCenter.default.post(name: ._internalFocusQuickAddNow, object: nil)
+            }
+            .keyboardShortcut("n", modifiers: [.command])
+            .help("New Task (⌘N)")
 
             // Label chips scroll
             ZStack(alignment: .leading) {

@@ -1,0 +1,409 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project DODO2.xcodeproj -scheme DODO2 -configuration Debug build
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'DODO2' in project 'DODO2' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 2084d9900dafb69b6d49de15909f05de
+Build description path: /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/XCBuildData/2084d9900dafb69b6d49de15909f05de.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+
+CreateBuildDirectory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    builtin-create-build-directory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products
+
+CreateBuildDirectory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    builtin-create-build-directory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    builtin-create-build-directory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2-fecc956442944f41a5d7ccf3ca2ffc62-VFS/all-product-headers.yaml
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2-fecc956442944f41a5d7ccf3ca2ffc62-VFS/all-product-headers.yaml
+
+CreateBuildDirectory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+    cd /Users/hayashitakumi/Projects/DODO2/DODO2.xcodeproj
+    builtin-create-build-directory /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/empty-DODO2.plist (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/empty-DODO2.plist
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftConstValuesFileList (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-OutputFileMap.json (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_const_extract_protocols.json (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.LinkFileList (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.LinkFileList
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/Entitlements.plist (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/Entitlements.plist
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyStaticMetadataFileList (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyMetadataFileList (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-project-headers.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-project-headers.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-own-target-headers.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-generated-files.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-generated-files.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-target-headers.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-non-framework-target-headers.hmap (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibPath-normal-arm64.txt (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibInstallName-normal-arm64.txt (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    write-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibInstallName-normal-arm64.txt
+
+MkDir /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /bin/mkdir -p /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents
+
+MkDir /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /bin/mkdir -p /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS
+
+MkDir /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /bin/mkdir -p /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app
+
+ProcessProductPackaging /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/DODO2.entitlements /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/DODO2.entitlements -entitlements -format xml -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent
+
+ProcessProductPackagingDER /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent.der (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /usr/bin/derq query -f xml -i /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent.der --raw
+
+Ld /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/__preview.dylib normal (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -install_name @rpath/DODO2.debug.dylib -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_dependency_info.dat -Xlinker -no_adhoc_codesign -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/__preview.dylib
+
+ProcessInfoPlistFile /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Info.plist /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/empty-DODO2.plist (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-infoPlistUtility /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/empty-DODO2.plist -producttype com.apple.product-type.application -genpkginfo /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Info.plist
+
+SwiftDriver DODO2 normal arm64 com.apple.xcode.tools.swift.compiler (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name DODO2 -Onone -enforce-exclusivity\=checked @/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Index.noindex/DataStore -swift-version 5 -I /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_const_extract_protocols.json -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-generated-files.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-own-target-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-target-headers.hmap -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-project-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/include -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources-normal/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-Swift.h -working-directory /Users/hayashitakumi/Projects/DODO2 -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal arm64 Compiling\ TaskCardView.swift,\ TaskItem.swift,\ TaskPersistence.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/TaskCardView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Model/TaskItem.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Store/TaskPersistence.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/TaskCardView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/TaskCardView.swift:136:10: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+        .onChange(of: quadrant) { _ in
+         ^
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Model/TaskItem.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Store/TaskPersistence.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ AppDelegate.swift,\ BottomSheetRoot.swift,\ BrandTokens.swift,\ ContentView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/AppDelegate.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/ContentView.swift (in target 'DODO2' from project 'DODO2')
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/AppDelegate.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift:135:10: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+        .onChange(of: tasks) { _ in saveStore() }
+         ^
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift:136:10: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+        .onChange(of: labels) { _ in saveStore() }
+         ^
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/ContentView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ DODO2 (in target 'DODO2' from project 'DODO2')
+
+EmitSwiftModule normal arm64 (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ DODO2App.swift,\ DragDrop.swift,\ HeaderBar.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/DODO2App.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/DragDrop.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/DODO2App.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/DragDrop.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift:330:10: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+        .onChange(of: count) { _ in
+         ^
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift:442:18: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+                .onChange(of: name) { newValue in
+                 ^
+
+SwiftCompile normal arm64 Compiling\ PanelWindowController.swift,\ Persistence.swift,\ PreferencesView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/PanelWindowController.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/Persistence.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/PreferencesView.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/PanelWindowController.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/PanelWindowController.swift:146:13: warning: initialization of immutable value 'finalFrame' was never used; consider replacing with assignment to '_' or removing it
+        let finalFrame = panel.frame
+        ~~~~^~~~~~~~~~
+        _
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/Persistence.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/PreferencesView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ HotKeyManager.swift,\ KeyPanel.swift,\ Label.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/HotKeyManager.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/KeyPanel.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Label.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/HotKeyManager.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/KeyPanel.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Label.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ UIConst.swift,\ NewTaskButton.swift,\ QuickComposerCard.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Design/UIConst.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Board/NewTaskButton.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Board/QuickComposerCard.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Design/UIConst.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Board/NewTaskButton.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Board/QuickComposerCard.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ PriorityMatrixView.swift,\ MatrixOverlayView.swift,\ HUDToast.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/PriorityMatrixView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/MatrixOverlayView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Common/HUDToast.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/PriorityMatrixView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/MatrixOverlayView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Common/HUDToast.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 Compiling\ SettingsModel.swift,\ ShortcutCaptureView.swift,\ Task.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/SettingsModel.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/ShortcutCaptureView.swift /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Task.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/SettingsModel.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/ShortcutCaptureView.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftCompile normal arm64 /Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Task.swift (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for DODO2 (in target 'DODO2' from project 'DODO2')
+
+SwiftDriver\ Compilation\ Requirements DODO2 normal arm64 com.apple.xcode.tools.swift.compiler (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name DODO2 -Onone -enforce-exclusivity\=checked @/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Index.noindex/DataStore -swift-version 5 -I /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_const_extract_protocols.json -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-generated-files.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-own-target-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-target-headers.hmap -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-project-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/include -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources-normal/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-Swift.h -working-directory /Users/hayashitakumi/Projects/DODO2 -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling HotKeyManager.swift, KeyPanel.swift, Label.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftMergeGeneratedHeaders /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/DODO2-Swift.h /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-Swift.h (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-swiftHeaderTool -arch arm64 /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-Swift.h -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/DODO2-Swift.h
+
+Copy /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.swiftmodule /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.swiftdoc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftdoc (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftdoc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.abi.json /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.abi.json (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.abi.json /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftsourceinfo (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftsourceinfo /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling SettingsModel.swift, ShortcutCaptureView.swift, Task.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling UIConst.swift, NewTaskButton.swift, QuickComposerCard.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling PanelWindowController.swift, Persistence.swift, PreferencesView.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling DODO2App.swift, DragDrop.swift, HeaderBar.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling TaskCardView.swift, TaskItem.swift, TaskPersistence.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling PriorityMatrixView.swift, MatrixOverlayView.swift, HUDToast.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AppDelegate.swift, BottomSheetRoot.swift, BrandTokens.swift, ContentView.swift (in target 'DODO2' from project 'DODO2')
+
+SwiftDriver\ Compilation DODO2 normal arm64 com.apple.xcode.tools.swift.compiler (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name DODO2 -Onone -enforce-exclusivity\=checked @/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos14.0 -g -module-cache-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Index.noindex/DataStore -swift-version 5 -I /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_const_extract_protocols.json -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-generated-files.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-own-target-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-all-target-headers.hmap -Xcc -iquote -Xcc /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-project-headers.hmap -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/include -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources-normal/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources/arm64 -Xcc -I/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-Swift.h -working-directory /Users/hayashitakumi/Projects/DODO2 -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib normal (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -filelist /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.LinkFileList -install_name @rpath/DODO2.debug.dylib -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -object_path_lto -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -dependency_info -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-ExecutorLinkFileList-normal-arm64.txt (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    construct-stub-executor-link-file-list /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'DODO2' from project 'DODO2')
+
+Ld /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2 normal (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos14.0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -F/Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../Frameworks -rdynamic -Xlinker -no_deduplicate -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2-ExecutorLinkFileList-normal-arm64.txt /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2
+
+CopySwiftLibs /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib --scan-folder /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Frameworks --scan-folder /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/PlugIns --scan-folder /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Library/SystemExtensions --scan-folder /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Extensions --platform macosx --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --module-name DODO2 --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk --xcode-version 16F6 --platform-family macOS --deployment-target 14.0 --output /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/Resources --target-triple arm64-apple-macos14.0 --binary-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2 --dependency-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2_dependency_info.dat --stringsdata-file /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftFileList --metadata-file-list /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyMetadataFileList --static-metadata-file-list /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.DependencyStaticMetadataFileList --swift-const-vals-list /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2025-09-07 13:50:25.627 appintentsmetadataprocessor[31073:2265865] Starting appintentsmetadataprocessor export
+2025-09-07 13:50:25.629 appintentsmetadataprocessor[31073:2265865] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+CodeSign /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/DODO2.debug.dylib
+
+CodeSign /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/__preview.dylib (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app/Contents/MacOS/__preview.dylib
+
+CodeSign /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --entitlements /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Intermediates.noindex/DODO2.build/Debug/DODO2.build/DODO2.app.xcent --timestamp\=none --generate-entitlement-der /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app
+
+RegisterExecutionPolicyException /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-RegisterExecutionPolicyException /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app
+
+Validate /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    builtin-validationUtility /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app -no-validate-extension -infoplist-subpath Contents/Info.plist
+
+Touch /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /usr/bin/touch -c /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app
+
+RegisterWithLaunchServices /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app (in target 'DODO2' from project 'DODO2')
+    cd /Users/hayashitakumi/Projects/DODO2
+    /System/Library/Frameworks/CoreServices.framework/Versions/Current/Frameworks/LaunchServices.framework/Versions/Current/Support/lsregister -f -R -trusted /Users/hayashitakumi/Library/Developer/Xcode/DerivedData/DODO2-gyxcfwwlsjuhkigufkmddzwxrrxk/Build/Products/Debug/DODO2.app
+
+** BUILD SUCCEEDED **
+

@@ -45,16 +45,6 @@
     "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.swiftdeps",
     "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager~partial.swiftmodule"
   },
-  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Model/TaskItem.swift" : {
-    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.swiftconstvalues",
-    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.d",
-    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.dia",
-    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.o",
-    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.bc",
-    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.o",
-    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.swiftdeps",
-    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem~partial.swiftmodule"
-  },
   "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Label.swift" : {
     "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.swiftconstvalues",
     "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.d",
@@ -135,16 +125,6 @@
     "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.swiftdeps",
     "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView~partial.swiftmodule"
   },
-  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Store/TaskPersistence.swift" : {
-    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.swiftconstvalues",
-    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.d",
-    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.dia",
-    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.o",
-    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.bc",
-    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.o",
-    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.swiftdeps",
-    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence~partial.swiftmodule"
-  },
   "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift" : {
     "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftconstvalues",
     "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.d",
@@ -184,16 +164,6 @@
     "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.o",
     "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.swiftdeps",
     "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView~partial.swiftmodule"
-  },
-  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/PriorityMatrixView.swift" : {
-    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.swiftconstvalues",
-    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.d",
-    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.dia",
-    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.o",
-    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.bc",
-    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.o",
-    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.swiftdeps",
-    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView~partial.swiftmodule"
   },
   "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift" : {
     "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftconstvalues",

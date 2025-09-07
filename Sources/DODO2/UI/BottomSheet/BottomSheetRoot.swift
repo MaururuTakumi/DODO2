@@ -17,6 +17,8 @@ struct BottomSheetRoot: View {
     @State private var clearScopeTitle: String = "all labels"
     @State private var isMatrixPresented: Bool = false
     @State private var toast: HUDToastState? = nil
+    @State private var isComposing: Bool = false
+    @State private var composerLabelId: String? = nil
 
     private let onRequestClose: () -> Void
 
@@ -55,6 +57,15 @@ struct BottomSheetRoot: View {
             Divider()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 260), spacing: 16)], spacing: 16) {
+                    if isComposing {
+                        QuickComposerCard(isPresented: $isComposing,
+                                          presetLabelName: composerLabelName()) { title, _ in
+                            createTask(title: title, labelId: composerLabelId)
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 8)
+                        .zIndex(1)
+                    }
                     ForEach(filteredTasks()) { task in
                         let label = labels.first(where: { $0.id == task.labelId })
                         TaskCardView(task: task, label: label, toggleDone: toggleDone(_:), onRequestDelete: {
@@ -114,6 +125,12 @@ struct BottomSheetRoot: View {
                 .transition(.scale.combined(with: .opacity))
                 .zIndex(10)
         }
+        if isComposing {
+            Color.black.opacity(0.001)
+                .ignoresSafeArea()
+                .onTapGesture { isComposing = false }
+                .zIndex(5)
+        }
         }
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }
@@ -130,6 +147,10 @@ struct BottomSheetRoot: View {
         .onReceive(NotificationCenter.default.publisher(for: .navigateSelection)) { note in
             guard let dir = note.userInfo?["dir"] as? Int else { return }
             moveSelection(by: dir)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: ._internalFocusQuickAddNow)) { _ in
+            composerLabelId = currentLabelContextId()
+            withAnimation { isComposing = true }
         }
         .onReceive(NotificationCenter.default.publisher(for: .toggleImportantSelected)) { _ in
             if let sel = selectedTaskId, let t = tasks.first(where: {$0.id == sel}) { toggleImportant(t) }
@@ -241,7 +262,7 @@ struct BottomSheetRoot: View {
     }
 
     private func countsByLabel() -> [String: Int] {
-        var dict: [String: Int] = [:]
+　        var dict: [String: Int] = [:]
         for t in tasks { dict[t.labelId, default: 0] += 1 }
         return dict
     }
@@ -315,6 +336,20 @@ struct BottomSheetRoot: View {
         guard let snap = lastClearSnapshot else { return }
         tasks = snap
         lastClearSnapshot = nil
+        saveStore()
+    }
+
+    private func currentLabelContextId() -> String? {
+        selectedLabels.first
+    }
+    private func composerLabelName() -> String? {
+        guard let id = composerLabelId else { return nil }
+        return labels.first(where: { $0.id == id })?.name
+    }
+    private func createTask(title: String, labelId: String?) {
+        let chosen = labelId ?? labels.first?.id ?? "general"
+        let newTask = Task(title: title, done: false, labelId: chosen)
+        tasks.insert(newTask, at: 0)
         saveStore()
     }
 }
