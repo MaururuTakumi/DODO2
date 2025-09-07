@@ -28,6 +28,7 @@ struct BottomSheetRoot: View {
     }
 
     var body: some View {
+        ZStack {
         VStack(spacing: 0) {
             HeaderBar(
                 quickAddText: $quickAddText,
@@ -48,7 +49,8 @@ struct BottomSheetRoot: View {
                 reassignTasksFromDeletedLabel: { deletedId, fallbackId in
                     for i in tasks.indices { if tasks[i].labelId == deletedId { tasks[i].labelId = fallbackId } }
                 },
-                onTapOpenMatrix: { isMatrixPresented = true }
+                isMatrixOpen: isMatrixPresented,
+                onToggleMatrix: { isMatrixPresented.toggle() }
             )
             Divider()
             ScrollView {
@@ -100,10 +102,19 @@ struct BottomSheetRoot: View {
                 .padding(.bottom, 6)
             }
         }
-        .sheet(isPresented: $isMatrixPresented) {
-            MatrixOverlayView(items: $tasks)
-                .hudToast($toast)
+        // Overlay/scrim
+        if isMatrixPresented {
+            Color.black.opacity(0.15)
+                .ignoresSafeArea()
+                .contentShape(Rectangle())
+                .onTapGesture { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } }
+                .zIndex(9)
+            MatrixOverlayView(items: $tasks, onClose: { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } })
                 .frame(minWidth: 900, minHeight: 560)
+                .hudToast($toast)
+                .transition(.scale.combined(with: .opacity))
+                .zIndex(10)
+        }
         }
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }

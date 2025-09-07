@@ -13,7 +13,8 @@ struct HeaderBar: View {
     let counts: [String: Int]
     let suggestNameForTask: (UUID) -> String?
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
-    var onTapOpenMatrix: () -> Void = {}
+    var isMatrixOpen: Bool = false
+    var onToggleMatrix: () -> Void = {}
     @AppStorage("didSeeMatrixCoachmark") private var didSeeMatrixCoachmark: Bool = false
     @State private var showCoachmark: Bool = false
 
@@ -99,12 +100,17 @@ struct HeaderBar: View {
             }
             .help("Delete completed tasks in current scope")
 
-            Button(action: { onTapOpenMatrix(); didSeeMatrixCoachmark = true; showCoachmark = false }) {
-                SwiftUI.Label("Matrix", systemImage: "square.grid.2x2")
+            Button(action: { onToggleMatrix(); didSeeMatrixCoachmark = true; showCoachmark = false }) {
+                if isMatrixOpen {
+                    SwiftUI.Label("Close Matrix", systemImage: "xmark.square")
+                        .tint(.accentColor)
+                } else {
+                    SwiftUI.Label("Matrix", systemImage: "square.grid.2x2")
+                }
             }
-            .help("Open priority matrix")
+            .help(isMatrixOpen ? "Close priority matrix (⌘⇧M)" : "Open priority matrix (⌘⇧M)")
             .controlSize(.small)
-            .keyboardShortcut("m", modifiers: [.command])
+            .keyboardShortcut("m", modifiers: [.command, .shift])
             .popover(isPresented: $showCoachmark, arrowEdge: .top) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Priority Matrix")

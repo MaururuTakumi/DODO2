@@ -215,7 +215,7 @@ final class PanelWindowController: NSWindowController {
         keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             guard let self = self else { return event }
             // Global shortcuts: ⌘M toggles matrix overlay when panel is visible
-            if event.modifierFlags.contains(.command), event.charactersIgnoringModifiers?.lowercased() == "m" {
+            if event.modifierFlags.contains([.command, .shift]), event.charactersIgnoringModifiers?.lowercased() == "m" {
                 NotificationCenter.default.post(name: .toggleMatrixOverlay, object: nil)
                 return nil
             }

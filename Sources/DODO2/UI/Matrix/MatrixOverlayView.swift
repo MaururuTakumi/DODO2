@@ -3,7 +3,7 @@ import UniformTypeIdentifiers
 
 struct MatrixOverlayView: View {
     @Binding var items: [Task]
-    @Environment(\.dismiss) private var dismiss
+    var onClose: () -> Void = {}
     @State private var filter: MatrixFilter = .all
     @State private var targeted: Quadrant? = nil
     @State private var toast: HUDToastState? = nil
@@ -13,13 +13,26 @@ struct MatrixOverlayView: View {
             header
             content
         }
-        .padding()
+        .padding(16)
+        .frame(minWidth: 900, minHeight: 560)
+        .background(
+            RoundedRectangle(cornerRadius: 14)
+                .fill(.ultraThickMaterial)
+                .shadow(radius: 22)
+        )
         .hudToast($toast)
+        .onExitCommand(perform: onClose)
     }
 
     private var header: some View {
         HStack(spacing: 12) {
-            Text("Urgency × Importance").font(.title2).bold()
+            Button(action: { onClose() }) {
+                SwiftUI.Label("Back to Tasks", systemImage: "chevron.left")
+            }
+            .buttonStyle(.bordered)
+            .controlSize(.small)
+            .accessibilityLabel("Back to Tasks")
+
             Spacer()
             countChip("Do First", .doFirst)
             countChip("Schedule", .schedule)
@@ -30,7 +43,12 @@ struct MatrixOverlayView: View {
             }
             .pickerStyle(.segmented)
             .frame(width: 360)
-            Button("Done") { dismiss() }
+            Spacer(minLength: 0)
+            Button(action: { onClose() }) { Text("Close (Esc)") }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+            .keyboardShortcut(.escape, modifiers: [])
+            .accessibilityLabel("Close matrix")
         }
     }
 
