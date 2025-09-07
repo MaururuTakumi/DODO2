@@ -110,7 +110,6 @@ struct BottomSheetRoot: View {
                 .onTapGesture { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } }
                 .zIndex(9)
             MatrixOverlayView(items: $tasks, onClose: { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } })
-                .frame(minWidth: 900, minHeight: 560)
                 .hudToast($toast)
                 .transition(.scale.combined(with: .opacity))
                 .zIndex(10)

@@ -16,7 +16,7 @@ struct MatrixOverlayView: View {
             content
         }
         .padding(16)
-        .frame(minWidth: 900, minHeight: 560)
+        .frame(maxWidth: 1240, maxHeight: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 14)
                 .fill(.ultraThickMaterial)
@@ -76,7 +76,8 @@ struct MatrixOverlayView: View {
                     quadrantView(q, title: q.title, minHeight: minCell, weight: q == .doFirst ? 1.08 : 1.0)
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, 48)
+                .padding(.bottom, 72)
+                .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 12) }
             } else {
                 LazyVGrid(
                     columns: [GridItem(.flexible(), spacing: spacing), GridItem(.flexible(), spacing: spacing)],
@@ -87,7 +88,8 @@ struct MatrixOverlayView: View {
                     quadrantView(.delegate,  title: "Delegate",   minHeight: minCell)
                     quadrantView(.eliminate, title: "Eliminate",  minHeight: minCell)
                 }
-                .padding(.bottom, 48)
+                .padding(.bottom, 72)
+                .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 12) }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
