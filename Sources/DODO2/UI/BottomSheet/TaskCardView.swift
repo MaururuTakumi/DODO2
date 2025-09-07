@@ -10,17 +10,16 @@ struct TaskCardView: View {
     var onToggleUrgent: ((Task) -> Void)? = nil
 
     private var badgeColor: Color { label?.color.color ?? .accentColor }
+    @Environment(\.cardMetrics) private var M
 
     var body: some View {
-        CardContainer {
-            // header (label dot + name + done toggle)
+        VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 8) {
                 Circle().fill(badgeColor).frame(width: 8, height: 8)
                 Text(label?.name ?? "")
                     .font(.caption)
                     .foregroundColor(.secondary)
                 Spacer(minLength: 0)
-                // Priority pills (larger, no-wrap) + mini badge
                 if let onToggleImportant {
                     PillToggle(icon: "star.fill", label: "Important", active: task.importance >= 2) { onToggleImportant(task) }
                 }
@@ -30,14 +29,35 @@ struct TaskCardView: View {
                 MatrixMiniBadge(quadrant: task.quadrant)
                 ToggleDoneArea(done: task.done) { toggleDone(task) }
             }
+            .controlSize(M.controlSize)
 
-            // title
             Text(task.title)
-                .font(BrandTokens.titleFont)
+                .font(.headline.weight(.semibold))
+                .lineLimit(2)
+                .truncationMode(.tail)
+                .fixedSize(horizontal: false, vertical: true)
                 .foregroundColor(.primary)
                 .strikethrough(task.done, color: .secondary)
-                .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
+
+            Text("I:\(task.importance)  U:\(task.urgency)")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
         }
+        .padding(.vertical, M.vPad)
+        .padding(.horizontal, M.hPad)
+        .frame(height: M.height, alignment: .topLeading)
+        .frame(minWidth: 260)
+        .background(
+            RoundedRectangle(cornerRadius: M.corner, style: .continuous)
+                .fill(Color(NSColor.windowBackgroundColor).opacity(0.7))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: M.corner, style: .continuous)
+                .stroke(Color.black.opacity(0.05))
+        )
+        .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 2)
+        .contentShape(RoundedRectangle(cornerRadius: M.corner, style: .continuous))
         .onDrag { NSItemProvider(object: NSString(string: "task:\(task.id.uuidString)")) }
         .contextMenu {
             Button(role: .destructive) { onRequestDelete?() } label: {
@@ -50,27 +70,7 @@ struct TaskCardView: View {
 }
 
 // 背景・枠線・影を担当（型を単純に保つ）
-private struct CardContainer<Content: View>: View {
-    private let content: Content
-    init(@ViewBuilder content: () -> Content) { self.content = content() }
-
-    var body: some View {
-        let r = BrandTokens.cornerRadius
-        VStack(alignment: .leading, spacing: 6) { content }
-            .padding(.vertical, 8)
-            .padding(.horizontal, 12)
-            .background(
-                RoundedRectangle(cornerRadius: r, style: .continuous)
-                    .fill(Color(NSColor.windowBackgroundColor).opacity(0.7))
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: r, style: .continuous)
-                    .stroke(Color.black.opacity(0.05))
-            )
-            .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 2)
-            .contentShape(Rectangle()) // 単純な型でヒット判定
-    }
-}
+// Old CardContainer replaced by metrics-based rendering
 
 private struct ToggleDoneArea: View {
     var done: Bool
