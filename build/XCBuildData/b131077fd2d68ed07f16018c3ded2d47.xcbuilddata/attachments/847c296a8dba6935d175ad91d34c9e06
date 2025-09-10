@@ -1,0 +1,228 @@
+{
+  "" : {
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-master.dia",
+    "emit-module-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-master-emit-module.dia",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2-master.swiftdeps"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/AppDelegate.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/ContentView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/DODO2App.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DODO2App~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/HotKeyManager.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HotKeyManager~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Model/TaskItem.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskItem~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Label.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Label~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/SettingsModel.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/SettingsModel~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Models/Task.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Task~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/PanelWindowController.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PanelWindowController~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/DragDrop.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/DragDrop~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Services/Persistence.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/Persistence~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/PreferencesView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PreferencesView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Settings/ShortcutCaptureView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/ShortcutCaptureView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/Store/TaskPersistence.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskPersistence~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/BottomSheetRoot.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BottomSheetRoot~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/HeaderBar.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HeaderBar~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/KeyPanel.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/KeyPanel~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/BottomSheet/TaskCardView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/TaskCardView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Common/HUDToast.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/HUDToast~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/MatrixOverlayView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/MatrixOverlayView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Matrix/PriorityMatrixView.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/PriorityMatrixView~partial.swiftmodule"
+  },
+  "/Users/hayashitakumi/Projects/DODO2/Sources/DODO2/UI/Theme/BrandTokens.swift" : {
+    "const-values" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftconstvalues",
+    "dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.d",
+    "diagnostics" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.dia",
+    "index-unit-output-path" : "/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.o",
+    "llvm-bc" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.bc",
+    "object" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.o",
+    "swift-dependencies" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens.swiftdeps",
+    "swiftmodule" : "/Users/hayashitakumi/Projects/DODO2/build/DODO2.build/Debug/DODO2.build/Objects-normal/arm64/BrandTokens~partial.swiftmodule"
+  }
+}

@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 struct HeaderBar: View {
     @Binding var quickAddText: String
@@ -13,6 +14,10 @@ struct HeaderBar: View {
     let counts: [String: Int]
     let suggestNameForTask: (UUID) -> String?
     let reassignTasksFromDeletedLabel: (_ deletedId: String, _ fallbackId: String) -> Void
+    var isMatrixOpen: Bool = false
+    var onToggleMatrix: () -> Void = {}
+    @AppStorage("didSeeMatrixCoachmark") private var didSeeMatrixCoachmark: Bool = false
+    @State private var showCoachmark: Bool = false
 
     @FocusState private var quickAddFocused: Bool
     @State private var showLabelPopover = false
@@ -23,10 +28,11 @@ struct HeaderBar: View {
 
     var body: some View {
         HStack(spacing: BrandTokens.gutter) {
-            QuickAddField(text: $quickAddText, onCommit: commitQuickAdd)
-                .frame(minWidth: 260, maxWidth: 360)
-                .accessibilityLabel(Text("Quick Add"))
-                .accessibilityHint(Text("Type a title and press Return to add"))
+            NewTaskButton {
+                NotificationCenter.default.post(name: ._internalFocusQuickAddNow, object: nil)
+            }
+            .keyboardShortcut("n", modifiers: [.command])
+            .help("New Task (⌘N)")
 
             // Label chips scroll
             ZStack(alignment: .leading) {
@@ -96,10 +102,52 @@ struct HeaderBar: View {
             }
             .help("Delete completed tasks in current scope")
 
+            Button(action: { onToggleMatrix(); didSeeMatrixCoachmark = true; showCoachmark = false }) {
+                if isMatrixOpen {
+                    SwiftUI.Label("Close Matrix", systemImage: "xmark.square")
+                        .tint(.accentColor)
+                } else {
+                    SwiftUI.Label("Matrix", systemImage: "square.grid.2x2")
+                }
+            }
+            .help(isMatrixOpen ? "Close priority matrix (⌘⇧M)" : "Open priority matrix (⌘⇧M)")
+            .controlSize(.small)
+            .keyboardShortcut("m", modifiers: [.command, .shift])
+
+            Menu {
+                Button("設定…") { _ = PreferencesLauncher.open() }
+                Divider()
+                Button("DODO2 を終了") { NSApp.terminate(nil) }
+            } label: {
+                Image(systemName: "ellipsis.circle").imageScale(.large)
+            }
+            .help("その他")
+            .buttonStyle(.plain)
+            .accessibilityLabel("その他メニュー")
+
+            // Density menu removed to reduce crowding
+            .popover(isPresented: $showCoachmark, arrowEdge: .top) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Priority Matrix")
+                        .font(.headline)
+                    Text("View tasks by Urgent × Important. You can also drag between quadrants.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+                .padding(12)
+                .frame(width: 260)
+            }
+
             SearchField(text: $searchText)
                 .frame(width: 220)
                 .accessibilityLabel(Text("Search"))
                 .accessibilityHint(Text("Type to filter tasks by title"))
+        }
+        .onAppear {
+            if !didSeeMatrixCoachmark {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { showCoachmark = true }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { showCoachmark = false; didSeeMatrixCoachmark = true }
+            }
         }
         .padding(.horizontal, BrandTokens.gutter)
         .frame(height: BrandTokens.headerHeight)

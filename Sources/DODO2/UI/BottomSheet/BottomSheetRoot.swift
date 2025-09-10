@@ -15,6 +15,10 @@ struct BottomSheetRoot: View {
     @State private var showClearConfirm: Bool = false
     @State private var clearTargetCount: Int = 0
     @State private var clearScopeTitle: String = "all labels"
+    @State private var isMatrixPresented: Bool = false
+    @State private var toast: HUDToastState? = nil
+    @State private var isComposing: Bool = false
+    @State private var composerLabelId: String? = nil
 
     private let onRequestClose: () -> Void
 
@@ -26,6 +30,7 @@ struct BottomSheetRoot: View {
     }
 
     var body: some View {
+        ZStack {
         VStack(spacing: 0) {
             HeaderBar(
                 quickAddText: $quickAddText,
@@ -45,16 +50,27 @@ struct BottomSheetRoot: View {
                 },
                 reassignTasksFromDeletedLabel: { deletedId, fallbackId in
                     for i in tasks.indices { if tasks[i].labelId == deletedId { tasks[i].labelId = fallbackId } }
-                }
+                },
+                isMatrixOpen: isMatrixPresented,
+                onToggleMatrix: { isMatrixPresented.toggle() }
             )
             Divider()
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 260), spacing: 16)], spacing: 16) {
+                    if isComposing {
+                        QuickComposerCard(isPresented: $isComposing,
+                                          presetLabelName: composerLabelName()) { title, _ in
+                            createTask(title: title, labelId: composerLabelId)
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.bottom, 8)
+                        .zIndex(1)
+                    }
                     ForEach(filteredTasks()) { task in
                         let label = labels.first(where: { $0.id == task.labelId })
                         TaskCardView(task: task, label: label, toggleDone: toggleDone(_:), onRequestDelete: {
                             deleteTask(id: task.id)
-                        })
+                        }, onToggleImportant: { _ in toggleImportant(task) }, onToggleUrgent: { _ in toggleUrgent(task) })
                             .contentShape(RoundedRectangle(cornerRadius: BrandTokens.cornerRadius, style: .continuous))
                             .onTapGesture { selectedTaskId = task.id }
                             .overlay(
@@ -97,9 +113,37 @@ struct BottomSheetRoot: View {
                 .padding(.bottom, 6)
             }
         }
+        .contextMenu {
+            Button("設定…") { _ = PreferencesLauncher.open() }
+            Button("DODO2 を終了") { NSApp.terminate(nil) }
+        }
+        // Overlay/scrim
+        if isMatrixPresented {
+            Color.black.opacity(0.15)
+                .ignoresSafeArea()
+                .contentShape(Rectangle())
+                .onTapGesture { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } }
+                .zIndex(9)
+            MatrixOverlayView(items: $tasks, onClose: { withAnimation(.easeOut(duration: 0.15)) { isMatrixPresented = false } })
+                .hudToast($toast)
+                .transition(.scale.combined(with: .opacity))
+                .zIndex(10)
+        }
+        if isComposing {
+            Color.black.opacity(0.001)
+                .ignoresSafeArea()
+                .onTapGesture { isComposing = false }
+                .zIndex(5)
+        }
+        }
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }
         .onExitCommand(perform: onRequestClose)
+        .onReceive(NotificationCenter.default.publisher(for: .showHUDToast)) { note in
+            if let m = note.userInfo?["message"] as? String {
+                withAnimation { toast = HUDToastState(message: m) }
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: .labelsDidChange)) { note in
             if let updated = note.object as? [Label] { labels = updated }
         }
@@ -113,6 +157,20 @@ struct BottomSheetRoot: View {
             guard let dir = note.userInfo?["dir"] as? Int else { return }
             moveSelection(by: dir)
         }
+        .onReceive(NotificationCenter.default.publisher(for: ._internalFocusQuickAddNow)) { _ in
+            composerLabelId = currentLabelContextId()
+            withAnimation { isComposing = true }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleImportantSelected)) { _ in
+            if let sel = selectedTaskId, let t = tasks.first(where: {$0.id == sel}) { toggleImportant(t) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleUrgentSelected)) { _ in
+            if let sel = selectedTaskId, let t = tasks.first(where: {$0.id == sel}) { toggleUrgent(t) }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .toggleMatrixOverlay)) { _ in
+            isMatrixPresented.toggle()
+        }
+        .hudToast($toast)
         .onReceive(NotificationCenter.default.publisher(for: .deleteSelection)) { _ in
             if let sel = selectedTaskId { deleteTask(id: sel) }
         }
@@ -174,6 +232,34 @@ struct BottomSheetRoot: View {
         if let idx = tasks.firstIndex(of: task) {
             tasks[idx].done.toggle()
         }
+    }
+
+    private func toggleImportant(_ task: Task) {
+        if let idx = tasks.firstIndex(of: task) {
+            let newVal = tasks[idx].importance >= 2 ? 1 : 3
+            tasks[idx] = tasks[idx].updating(importance: newVal)
+            showTransientFeedback(for: tasks[idx])
+        }
+    }
+
+    private func toggleUrgent(_ task: Task) {
+        if let idx = tasks.firstIndex(of: task) {
+            let newVal = tasks[idx].urgency >= 2 ? 1 : 3
+            tasks[idx] = tasks[idx].updating(urgency: newVal)
+            showTransientFeedback(for: tasks[idx])
+        }
+    }
+
+    private func showTransientFeedback(for task: Task) {
+        let q = task.quadrant
+        let msg: String
+        switch q {
+        case .doFirst: msg = "Moved to Do First"
+        case .schedule: msg = "Moved to Schedule"
+        case .delegate: msg = "Moved to Delegate"
+        case .eliminate: msg = "Moved to Eliminate"
+        }
+        withAnimation { toast = HUDToastState(message: msg) }
     }
 
     private func filteredTasks() -> [Task] {
@@ -259,6 +345,20 @@ struct BottomSheetRoot: View {
         guard let snap = lastClearSnapshot else { return }
         tasks = snap
         lastClearSnapshot = nil
+        saveStore()
+    }
+
+    private func currentLabelContextId() -> String? {
+        selectedLabels.first
+    }
+    private func composerLabelName() -> String? {
+        guard let id = composerLabelId else { return nil }
+        return labels.first(where: { $0.id == id })?.name
+    }
+    private func createTask(title: String, labelId: String?) {
+        let chosen = labelId ?? labels.first?.id ?? "general"
+        let newTask = Task(title: title, done: false, labelId: chosen)
+        tasks.insert(newTask, at: 0)
         saveStore()
     }
 }

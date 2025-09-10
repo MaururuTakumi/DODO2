@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 @main
 struct DODO2App: App {
@@ -7,7 +8,8 @@ struct DODO2App: App {
     var body: some Scene {
         // No main window — panel toggled via hotkeys/command
         Settings {
-            PreferencesView()
+            PreferencesRootView()
+                .frame(minWidth: 720, minHeight: 520)
         }
         .commands {
             CommandGroup(after: .appInfo) {
@@ -48,10 +50,12 @@ struct DODO2App: App {
                     NotificationCenter.default.post(name: .requestDeleteCompleted, object: nil)
                 }
                 .keyboardShortcut(.delete, modifiers: [.command, .shift])
+
+                // Matrix opens as sheet from main UI; no separate window command
             }
             CommandGroup(replacing: .appSettings) {
                 Button("Preferences…") {
-                    NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+                    _ = PreferencesLauncher.open()
                 }
                 .keyboardShortcut(",", modifiers: [.command])
             }
@@ -72,4 +76,8 @@ extension Notification.Name {
     static let requestDeleteSelected = Notification.Name("requestDeleteSelected")
     static let requestDeleteCompleted = Notification.Name("requestDeleteCompleted")
     static let requestUndoDelete = Notification.Name("requestUndoDelete")
+    static let toggleImportantSelected = Notification.Name("toggleImportantSelected")
+    static let toggleUrgentSelected = Notification.Name("toggleUrgentSelected")
+    static let toggleMatrixOverlay = Notification.Name("toggleMatrixOverlay")
+    static let showHUDToast = Notification.Name("ShowHUDToast")
 }

@@ -8,3 +8,7 @@ xcuserdata/
 
 # macOS
 .DS_Store
+
+# Profiling artifacts & local logs
+*.profraw
+pause-notes.log
