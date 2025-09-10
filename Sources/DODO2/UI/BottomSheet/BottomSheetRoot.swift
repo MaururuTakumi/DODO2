@@ -113,6 +113,10 @@ struct BottomSheetRoot: View {
                 .padding(.bottom, 6)
             }
         }
+        .contextMenu {
+            Button("設定…") { _ = PreferencesLauncher.open() }
+            Button("DODO2 を終了") { NSApp.terminate(nil) }
+        }
         // Overlay/scrim
         if isMatrixPresented {
             Color.black.opacity(0.15)
@@ -135,6 +139,11 @@ struct BottomSheetRoot: View {
         .onChange(of: tasks) { _ in saveStore() }
         .onChange(of: labels) { _ in saveStore() }
         .onExitCommand(perform: onRequestClose)
+        .onReceive(NotificationCenter.default.publisher(for: .showHUDToast)) { note in
+            if let m = note.userInfo?["message"] as? String {
+                withAnimation { toast = HUDToastState(message: m) }
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: .labelsDidChange)) { note in
             if let updated = note.object as? [Label] { labels = updated }
         }

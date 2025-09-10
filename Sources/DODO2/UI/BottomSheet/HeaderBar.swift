@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 struct HeaderBar: View {
     @Binding var quickAddText: String
@@ -112,6 +113,17 @@ struct HeaderBar: View {
             .help(isMatrixOpen ? "Close priority matrix (⌘⇧M)" : "Open priority matrix (⌘⇧M)")
             .controlSize(.small)
             .keyboardShortcut("m", modifiers: [.command, .shift])
+
+            Menu {
+                Button("設定…") { _ = PreferencesLauncher.open() }
+                Divider()
+                Button("DODO2 を終了") { NSApp.terminate(nil) }
+            } label: {
+                Image(systemName: "ellipsis.circle").imageScale(.large)
+            }
+            .help("その他")
+            .buttonStyle(.plain)
+            .accessibilityLabel("その他メニュー")
 
             // Density menu removed to reduce crowding
             .popover(isPresented: $showCoachmark, arrowEdge: .top) {

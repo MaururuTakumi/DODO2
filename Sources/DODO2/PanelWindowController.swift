@@ -1,7 +1,9 @@
 import AppKit
 import SwiftUI
 
-final class PanelWindowController: NSWindowController {
+private let kBottomMargin: CGFloat = 16  // Bottom margin when docking to bottom edge
+
+final class PanelWindowController: NSWindowController, NSWindowDelegate {
     static let shared = PanelWindowController()
 
     private let panelHeight: CGFloat = 360
@@ -14,13 +16,8 @@ final class PanelWindowController: NSWindowController {
     private var outsideClickLocal: Any?
 
     private init() {
-        let chosenScreen = PanelWindowController.targetScreen() ?? NSScreen.main
-        let frame: NSRect
-        if let s = chosenScreen {
-            frame = PanelWindowController.targetFrame(on: s, height: panelHeight, sideInset: sideInset, bottomInset: bottomInset)
-        } else {
-            frame = NSRect(x: 200, y: 200, width: 800, height: panelHeight)
-        }
+        // Initial frame; exact position will be set at show-time via applyBottomFullWidthLayout()
+        let frame: NSRect = NSRect(x: 200, y: 200, width: 800, height: panelHeight)
         // Use a key-capable panel with a hidden title bar for a borderless look
         let style: NSWindow.StyleMask = [.titled, .fullSizeContentView]
         let panel = KeyPanel(contentRect: frame, styleMask: style, backing: .buffered, defer: false)
@@ -80,27 +77,19 @@ final class PanelWindowController: NSWindowController {
 
     func show(animated: Bool) {
         guard let panel = self.window else { return }
-        repositionToCurrentScreen()
         // Instrument window state before show
         let hadNonActivating = panel.styleMask.contains(.nonactivatingPanel)
         NSLog("[DODO2] Before show — styleMask=%@ nonactivating=%@ isKey=%d canBecomeKey=%d",
               String(describing: panel.styleMask), String(hadNonActivating), panel.isKeyWindow, panel.canBecomeKey)
         if hadNonActivating { NSLog("[DODO2][ERR] nonactivatingPanel present — inputs cannot focus") }
-        // 1) Move to current Space first (no Space switch)
+        // Prepare fade; perform layout and ordering via showWindow(_:)
         panel.alphaValue = 0.0
-        panel.orderFrontRegardless()
-        // 2) Activate as an agent; won't switch Desktops
+        // Activate as an agent; won't switch Desktops
         NSApp.activate(ignoringOtherApps: true)
-        // 3) Become key so text inputs focus
-        panel.makeKeyAndOrderFront(nil)
-        let finalFrame = panel.frame
-        var startFrame = finalFrame
-        startFrame.origin.y -= 20
-        panel.setFrame(startFrame, display: false)
-
+        // Order and layout exactly once
+        self.showWindow(nil)
         let animations = {
             panel.animator().alphaValue = 1.0
-            panel.animator().setFrame(finalFrame, display: true)
         }
         if animated {
             NSAnimationContext.runAnimationGroup { ctx in
@@ -143,7 +132,6 @@ final class PanelWindowController: NSWindowController {
 
     func hide(animated: Bool) {
         guard let panel = self.window else { return }
-        let finalFrame = panel.frame
         let animations = {
             panel.animator().alphaValue = 0.0
         }
@@ -186,28 +174,71 @@ final class PanelWindowController: NSWindowController {
         }
     }
 
-    func repositionToCurrentScreen() {
-        guard let panel = self.window else { return }
-        guard let screen = PanelWindowController.targetScreen() ?? panel.screen ?? NSScreen.main else { return }
-        let frame = PanelWindowController.targetFrame(on: screen, height: panelHeight, sideInset: sideInset, bottomInset: bottomInset)
-        panel.setFrame(frame, display: true)
-        NSLog("[DODO2] Panel repositioned to screen %@ -> %@", screen.debugDescription, NSStringFromRect(frame))
-    }
-
-    private static func targetScreen() -> NSScreen? {
-        let mouse = NSEvent.mouseLocation
-        for s in NSScreen.screens {
-            if s.frame.contains(mouse) { return s }
+    // Hotkey entry: ensure single, frontmost appearance on current Space
+    func showOverlayFromHotkey() {
+        DispatchQueue.main.async {
+            guard let panel = self.window else { return }
+            panel.collectionBehavior.insert([.moveToActiveSpace, .fullScreenAuxiliary])
+            if panel.isVisible { return }
+            NSApp.activate(ignoringOtherApps: true)
+            self.show(animated: true)
         }
-        return NSScreen.main
     }
 
-    private static func targetFrame(on screen: NSScreen, height: CGFloat, sideInset: CGFloat, bottomInset: CGFloat) -> NSRect {
-        let vis = screen.visibleFrame
-        let width = max(200, vis.width - (sideInset * 2))
-        let x = vis.minX + sideInset
-        let y = vis.minY + bottomInset
-        return NSRect(x: x, y: y, width: width, height: height)
+    // On screen change, reapply layout as a safety (does not change effects/animations)
+    func windowDidChangeScreen(_ notification: Notification) {
+        applyBottomFullWidthLayout()
+    }
+
+    // Bottom-docked, full-width layout with pixel snapping
+    private func applyBottomFullWidthLayout() {
+        guard let w = window else { return }
+        let screen = pickScreen(for: w)
+        let vf = screen.visibleFrame
+
+        let current = w.frame
+        let scale = max(1.0, w.backingScaleFactor)
+        @inline(__always) func snap(_ v: CGFloat) -> CGFloat { (v * scale).rounded() / scale }
+
+        // Height preserves current, clamps to visible height minus bottom margin
+        let maxHeight = max(0, vf.height - kBottomMargin)
+        let height = min(current.height, maxHeight)
+
+        let target = CGRect(
+            x: snap(vf.minX),
+            y: snap(vf.minY + kBottomMargin),
+            width: snap(vf.width),
+            height: snap(height)
+        )
+
+        // Exactly one setFrame during show flow
+        w.setFrame(target, display: true)
+
+        #if DEBUG || LOG_PANEL_GEOMETRY
+        let dbg = String(format: "[DODO2][geom] vis=(%.1f,%.1f,%.1f,%.1f) -> frame=(%.1f,%.1f,%.1f,%.1f) scale=%.2f",
+                         vf.minX, vf.minY, vf.width, vf.height,
+                         target.minX, target.minY, target.width, target.height, scale)
+        NSLog("%@", dbg)
+        #endif
+    }
+
+    // Screen selection: window.screen → mouse location → main
+    private func pickScreen(for w: NSWindow) -> NSScreen {
+        if let s = w.screen { return s }
+        let mouse = NSEvent.mouseLocation
+        if let underMouse = NSScreen.screens.first(where: { $0.frame.contains(mouse) }) { return underMouse }
+        return NSScreen.main ?? NSScreen.screens.first!
+    }
+
+    // Ensure placement for callers that use NSWindowController.showWindow(_:) directly
+    override func showWindow(_ sender: Any?) {
+        super.showWindow(sender)
+        guard let w = window else { return }
+        // Disable autosave/restore; placement is controlled explicitly
+        w.isRestorable = false
+        w.delegate = self
+        applyBottomFullWidthLayout()
+        w.makeKeyAndOrderFront(nil)
     }
 
     private func installKeyMonitor() {
