@@ -11,14 +11,31 @@ struct SettingsModel: Codable, Equatable {
     var togglePrimary: HotkeySpec?    // e.g. ⌥Space
     var toggleFallback: HotkeySpec?   // e.g. ⌘⌥Space (recommended enabled)
     var quickAddGlobal: HotkeySpec?   // e.g. ⌘⇧N (optional)
+    // Global overlay toggle hotkey (user configurable)
+    var overlayHotKey: HotKeyCombo?
+    // Compatibility mode for Event Tap (Input Monitoring permission)
+    var useCompatibilityMode: Bool? = false
 
     static var defaults: SettingsModel {
         SettingsModel(
             togglePrimary: HotkeySpec(keyCode: UInt32(kVK_Space), modifiers: UInt32(optionKey), enabled: true),
             toggleFallback: HotkeySpec(keyCode: UInt32(kVK_Space), modifiers: UInt32(optionKey | cmdKey), enabled: true),
-            quickAddGlobal: nil
+            quickAddGlobal: nil,
+            overlayHotKey: defaultHotKey,
+            useCompatibilityMode: false
         )
     }
+}
+
+// Simple combo for Carbon hotkeys
+struct HotKeyCombo: Codable, Equatable {
+    var keyCode: UInt32   // Carbon virtual key code
+    var modifiers: UInt32 // Carbon modifiers (cmdKey/optionKey/shiftKey/controlKey)
+}
+
+extension SettingsModel {
+    // Default: Option + Space (⌥Space)
+    static let defaultHotKey = HotKeyCombo(keyCode: UInt32(kVK_Space), modifiers: UInt32(optionKey))
 }
 
 enum KeyDisplay {
@@ -52,3 +69,6 @@ enum KeyDisplay {
     }
 }
 
+extension Notification.Name {
+    static let hotKeySettingChanged = Notification.Name("hotKeySettingChanged")
+}

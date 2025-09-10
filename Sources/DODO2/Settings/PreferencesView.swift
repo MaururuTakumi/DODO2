@@ -1,15 +1,28 @@
 import SwiftUI
+import AppKit
 import Carbon.HIToolbox
 
 struct PreferencesView: View {
     @State private var labels: [Label]
     @State private var settings: SettingsModel
     @State private var showingDeleteConfirm: Label? = nil
+    @State private var overlayKeyCode: UInt32 = SettingsModel.defaultHotKey.keyCode
+    @State private var overlayModifiers: UInt32 = SettingsModel.defaultHotKey.modifiers
+    @ObservedObject private var hotkeys = HotKeyManager.shared
+    @State private var compatMode: Bool = false
 
     init() {
         let store = Persistence.load()
         _labels = State(initialValue: store.labels)
         _settings = State(initialValue: store.settings ?? SettingsModel.defaults)
+        if let hk = (store.settings ?? SettingsModel.defaults).overlayHotKey {
+            _overlayKeyCode = State(initialValue: hk.keyCode)
+            _overlayModifiers = State(initialValue: hk.modifiers)
+        } else {
+            _overlayKeyCode = State(initialValue: SettingsModel.defaultHotKey.keyCode)
+            _overlayModifiers = State(initialValue: SettingsModel.defaultHotKey.modifiers)
+        }
+        _compatMode = State(initialValue: (store.settings ?? SettingsModel.defaults).useCompatibilityMode ?? false)
     }
 
     var body: some View {
@@ -26,6 +39,45 @@ struct PreferencesView: View {
     private var shortcutsTab: some View {
         Form {
             VStack(alignment: .leading, spacing: 12) {
+                Text("Global Overlay Hotkey").font(.headline)
+                HStack(spacing: 12) {
+                    ShortcutCaptureView(keyCode: $overlayKeyCode, modifiers: $overlayModifiers)
+                    Spacer()
+                    Button("Apply") { applyOverlayHotKey() }
+                    Button("Reset Default") {
+                        overlayKeyCode = SettingsModel.defaultHotKey.keyCode
+                        overlayModifiers = SettingsModel.defaultHotKey.modifiers
+                        applyOverlayHotKey()
+                    }
+                }
+                Text("現在: \(KeyDisplay.format(keyCode: overlayKeyCode, modifiers: overlayModifiers))")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Text("既定: ⌥Space。衝突する場合（例：Raycast/Alfred）があるため、必要に応じて変更してください。")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                // Status + compatibility mode
+                HStack(spacing: 12) {
+                    StatusBadge(status: hotkeys.status)
+                    Toggle("互換モード (Event Tap) を有効化", isOn: $compatMode)
+                        .onChange(of: compatMode) { on in
+                            HotKeyManager.shared.enableCompatibilityMode(on)
+                            // persist to settings
+                            settings.useCompatibilityMode = on
+                            saveSettings()
+                        }
+                    Spacer()
+                    Button("権限を開く…") {
+                        if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent") {
+                            NSWorkspace.shared.open(url)
+                        }
+                    }
+                    Button("テスト") {
+                        HotKeyManager.shared.fireForTest()
+                    }
+                }
+                Divider().padding(.vertical, 8)
                 Text("Toggle Panel")
                     .font(.headline)
                 HStack {
@@ -151,8 +203,60 @@ struct PreferencesView: View {
         Persistence.save(store)
         HotKeyManager.shared.apply(settings: settings)
     }
+
+    private func applyOverlayHotKey() {
+        // Require at least one modifier to avoid bare Space etc.
+        guard overlayModifiers != 0 else {
+            let alert = NSAlert()
+            alert.messageText = "修飾キーが必要です"
+            alert.informativeText = "⌘/⌥/⇧/⌃のいずれかを含めてください（例：⌥Space）。"
+            alert.alertStyle = .warning
+            alert.runModal()
+            return
+        }
+        let candidate = HotKeyCombo(keyCode: overlayKeyCode, modifiers: overlayModifiers)
+        if HotKeyManager.shared.start(with: candidate) {
+            settings.overlayHotKey = candidate
+            saveSettings()
+            NotificationCenter.default.post(name: .hotKeySettingChanged, object: candidate)
+        } else {
+            // Revert to previously saved (or default) and inform user
+            let fallback = settings.overlayHotKey ?? SettingsModel.defaultHotKey
+            overlayKeyCode = fallback.keyCode
+            overlayModifiers = fallback.modifiers
+            settings.overlayHotKey = fallback
+            saveSettings()
+            let alert = NSAlert()
+            alert.messageText = "ショートカット登録に失敗しました"
+            alert.informativeText = "そのショートカットは他で使用されています。別の組み合わせを選んでください。"
+            alert.alertStyle = .warning
+            alert.runModal()
+        }
+    }
 }
 
 extension Notification.Name {
     static let labelsDidChange = Notification.Name("LabelsDidChange")
+}
+
+private struct StatusBadge: View {
+    let status: HotKeyManager.HotKeyStatus
+    var body: some View {
+        let (text, color): (String, Color) = {
+            switch status {
+            case .inactive: return ("Inactive", .gray)
+            case .active(.carbon): return ("Active (Carbon)", .green)
+            case .active(.eventTap): return ("Active (Event Tap)", .blue)
+            case .conflict: return ("Conflict", .orange)
+            case .denied: return ("Permission Required", .red)
+            case .error(_): return ("Error", .red)
+            }
+        }()
+        return Text(text)
+            .font(.caption).bold()
+            .padding(.horizontal, 8).padding(.vertical, 4)
+            .background(color.opacity(0.18))
+            .clipShape(Capsule())
+            .accessibilityLabel(Text(text))
+    }
 }

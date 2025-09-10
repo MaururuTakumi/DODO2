@@ -32,6 +32,7 @@ enum Persistence {
         }
     }
 
+
     static func save(_ store: Store, immediate: Bool = false) {
         ensureParentDir()
         let work = DispatchWorkItem {
